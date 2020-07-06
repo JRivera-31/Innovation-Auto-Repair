@@ -1,13 +1,17 @@
 import Header from "../components/Header/Header";
-import Head from "next/head"
 import Hero from '../components/Hero/Hero';
-import Layout from "../components/layout"
 
 export default function Home() {
   return (
-    <div>
+    <html>
+      <head>
+        <title>Innovation Auto</title>
+        <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet"></link>
+      </head>
+      <body>
         <Header />
         <Hero />
-    </div>
+      </body>
+    </html>
   )
 }

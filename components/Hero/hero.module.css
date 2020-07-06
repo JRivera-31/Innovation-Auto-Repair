@@ -1,0 +1,19 @@
+.heroImg {
+    height: 100vh;
+    width: 100%;
+    background-image: url('../../public/images/garagePlaceholder.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroTitle {
+    color: white;
+    font-size: 3em;
+}
+
+.heroText {
+    color: white;
+}

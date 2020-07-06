@@ -4,7 +4,7 @@
     height: 80px;
     display: block;
     background-color: #61191C ;
-    
+    position: fixed;
   }
   .innerHeader{
     width: 90%;

@@ -3,9 +3,14 @@ import Hero from '../components/Hero/Hero';
 
 export default function Home() {
   return (
-    <div>
-      <Header />
-      <Hero />
-    </div>
+    <html>
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet"></link>
+      </head>
+      <body>
+        <Header />
+        <Hero />
+      </body>
+    </html>
   )
 }

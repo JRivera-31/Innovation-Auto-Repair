@@ -1,0 +1,55 @@
+.header {
+    text-align: center;
+    padding: 1rem;
+}
+
+.employees {
+    width: 50vw;
+    margin: 1.5em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.employee {
+    margin: 0 1em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.details {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.imageDiv {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.photos {
+    border-radius: 50%;
+}
+
+@media (max-width: 850px) {
+    .imageDiv {
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .employees {
+        flex-direction: column;
+    }
+
+    .employee {
+        padding-bottom: 1rem;
+    }
+}

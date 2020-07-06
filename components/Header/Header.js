@@ -1,10 +1,10 @@
-
+import "./module.css"
 function Header() {
     return (
         <div className="header">
         <div className="innerHeader">
           <div className="logoContainer">
-            <h1>my<span>SITE</span></h1>
+            <h1>Innovation Auto Hail Repair</h1>
           </div>
           <ul className="navigation">
             <a><li>About</li></a>

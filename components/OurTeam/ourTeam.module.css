@@ -1,0 +1,55 @@
+.header {
+    text-align: center;
+    padding: 1rem;
+}
+
+.employees {
+    width: 75vw;
+    /* height: 50vh; */
+    padding: 1em;
+    margin: 1.5em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-top: 2rem;
+}
+
+.employee {
+    margin: 0 1em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.name {
+    text-align: center;
+    justify-content: left;
+    margin-bottom: 0.5rem;
+}
+
+.imageDiv {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.photos {
+    border-radius: 50%;
+}
+
+@media (max-width: 850px) {
+    .imageDiv {
+        text-align: left;
+        margin-bottom: 0.5rem;
+    }
+
+    .employees {
+        flex-direction: column;
+    }
+
+    .employee {
+        padding-bottom: 1rem;
+    }
+}

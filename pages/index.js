@@ -1,9 +1,12 @@
 import Header from "../components/Header/Header";
+import Head from "next/head"
 
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Head>
+        <Header />
+      </Head>
     </div>
   )
 }

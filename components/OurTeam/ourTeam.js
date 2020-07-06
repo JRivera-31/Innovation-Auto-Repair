@@ -13,28 +13,35 @@ export default function Contact() {
                         <div className={styles.imageDiv}>
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
-                        <h4 className={styles.name}>First Last</h4>
-                        <p>
-                            Position
-                        </p>
+                        <div className={styles.details}>
+                            <h4 >First Last</h4>
+                            <p>
+                                Position
+                            </p>
+                        </div>
+                        
                     </div>
                     <div className={styles.employee}>
                         <div className={styles.imageDiv}>
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
-                        <h4 className={styles.name}>First Last</h4>
-                        <p>
-                            Position
-                        </p>                    
+                        <div className={styles.details}>
+                            <h4 >First Last</h4>
+                            <p>
+                                Position
+                            </p>
+                        </div>                  
                     </div>
                     <div className={styles.employee}>
                         <div className={styles.imageDiv}>
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
-                        <h4 className={styles.name}> First Last</h4>
-                        <p>
-                            Position
-                        </p> 
+                        <div className={styles.details}>
+                            <h4 >First Last</h4>
+                            <p>
+                                Position
+                            </p>
+                        </div>
                     </div>
                 </div>
                 <div className={styles.row}>
@@ -42,19 +49,23 @@ export default function Contact() {
                         <div className={styles.imageDiv}>
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
-                        <h4 className={styles.name}>First Last</h4>
-                        <p>
-                            Position
-                        </p> 
+                        <div className={styles.details}>
+                            <h4 >First Last</h4>
+                            <p>
+                                Position
+                            </p>
+                        </div>
                     </div>
                     <div className={styles.employee}>
                         <div className={styles.imageDiv}>
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
-                        <h4 className={styles.name}>First Last</h4>
-                        <p>
-                            Position
-                        </p>
+                        <div className={styles.details}>
+                            <h4 >First Last</h4>
+                            <p>
+                                Position
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

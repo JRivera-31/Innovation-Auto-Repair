@@ -1,16 +1,16 @@
 import headerStyles from "./header.module.css"
 function Header() {
   
-    const sidebar = document.querySelector(".sidebar");
-    const line1 = document.querySelector(".line-1"); 
-    const line2 = document.querySelector(".line-2");
-    const line3 = document.querySelector(".line-3"); 
-  const click = () => {
-    sidebar.classList.toggle('change');
-    line1.classList.toggle('rotate1');
-    line2.classList.toggle('rotate2');
-    line3.classList.toggle('rotate3');
-      }
+//   const sidebar = document.querySelector(".sidebar");
+//   const line1 = document.querySelector(".line-1"); 
+//   const line2 = document.querySelector(".line-2");
+//   const line3 = document.querySelector(".line-3"); 
+// const click = () => {
+//   sidebar.classList.toggle('change');
+//   line1.classList.toggle('rotate1');
+//   line2.classList.toggle('rotate2');
+//   line3.classList.toggle('rotate3');
+//     }
 
     return (
       <div>
@@ -20,7 +20,9 @@ function Header() {
             <h1>Innovation Auto Hail Repair</h1>
           </div>
           <div className={headerStyles.navHolder}>
-                <div onClick={click} className={headerStyles.hamburgerMenu}>
+                <div 
+                // onClick={click} 
+                className={headerStyles.hamburgerMenu}>
                   <div className={`${headerStyles.line} ${headerStyles.line-1}`}></div>
                   <div className={`${headerStyles.line} ${headerStyles.line-2}`}></div>
                   <div className={`${headerStyles.line} ${headerStyles.line-3}`}></div>

@@ -23,12 +23,14 @@
   height: 100%;
   display: table-cell;
   vertical-align: middle;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 32px;
   font-weight: 200;
 }
 .navigation{
   float: right;
   height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .navigation a {
   height: 100%;
@@ -129,7 +131,6 @@
       display: none;
   }
   .logoContainer h1 {
-<<<<<<< HEAD
     color: white;
     height: 100%;
     display: table-cell;
@@ -142,8 +143,5 @@
     float: right;
     height: 100%;
     font-family: 'Source Sans Pro', sans-serif;
-=======
-      font-size: 22px;
->>>>>>> fcbd089f2a307dacaedc2808743f380d469210dc
   }
 }

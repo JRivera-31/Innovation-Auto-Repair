@@ -3,7 +3,7 @@
   width: 100%;
   height: 80px;
   display: block;
-  background-color: #61191C ;
+  background-color: #fff ;
   position: fixed;
   z-index: 2;
 }
@@ -12,20 +12,15 @@
   height: 100%;
   display: block;
   margin: 0 auto;
+  
 }
 .logoContainer{
   height: 100%;
+  width: 100px;
   display: table;
   float: left;
-}
-.logoContainer h1 {
-  color: white;
-  height: 100%;
-  display: table-cell;
-  vertical-align: middle;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 32px;
-  font-weight: 200;
+  background-image: url('../../public/images/Innovation_Logo-no-bg.png');
+  background-size: cover;
 }
 .navigation{
   float: right;
@@ -46,7 +41,7 @@
   display: table-cell;
   vertical-align: middle;
   height: 100%;
-  color: white;
+  color: #000;
   font-size: 20px;
 }
 .navigation li:hover {
@@ -72,7 +67,7 @@
 .line {
   width: 100%;
   height: 3px;
-  background-color: white;
+  background-color: #000;
   transition: all 0.2s;
   z-index: 2;
 }

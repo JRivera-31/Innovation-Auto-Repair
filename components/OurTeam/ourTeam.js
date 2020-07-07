@@ -1,10 +1,9 @@
 import styles from './ourTeam.module.css';
-import Link from 'next/link';
 
-export default function Contact() {
+export default function OurTeam() {
     return (
-        <div>
-            <div className={styles.header}>
+        <div className={styles.ourTeamBody}>
+            <div className={styles.heading}>
                 <h1>Our Team</h1>
                 <hr className={styles.ourTeamHr}/>
             </div>

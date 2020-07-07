@@ -16,12 +16,14 @@
 }
 
 .logoContainer{
-  height: 100%;
-  width: 100px;
-  display: table;
+  height: 60px;
+  width: 150px;
+  display: flex;
   float: left;
   background-image: url('../../public/images/Innovation_Logo-no-bg-white.png');
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .navigation{

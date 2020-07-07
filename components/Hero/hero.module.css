@@ -11,8 +11,6 @@
 
 .heroTitle {
     color: white;
-    /* font-size: 3em;
-    font-family: 'Bebas Neue', sans-serif; */
     font-size: 6em;
     font-family: 'Chau Philomene One', sans-serif;
 }
@@ -20,11 +18,21 @@
 .heroText {
     width: 25%;
     margin: 1em 0;
-    font-family: 'Raleway', sans-serif;
     font-size: 2em;
-    font-family: sans-serif;
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.5em;
     padding-bottom: 1.5rem;
+}
+
+@media (max-width: 850px) {
+    .heroTitle {
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    .heroText {
+        width: 75%;
+        text-align: center;
+    }
 }

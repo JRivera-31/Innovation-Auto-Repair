@@ -4,6 +4,12 @@
     font-family: 'Chau Philomene One', sans-serif;
 }
 
+.ourTeamHr {
+    margin: 0 auto;
+    width: 5%;
+    border: 1px solid rgb(161, 11, 11);
+}
+
 .row {
     display: flex;
     flex-direction: row;

@@ -6,7 +6,7 @@ const Hero = () => {
         <section className={style.heroImg}>
             <h1 className={style.heroTitle}>Innovation Auto Repair</h1>
             <p className={style.heroText}>Our commitment is to repair  your vehicle to its pre-storm condition!</p>
-            <Button variant="contained">Book Free Appointment Now!</Button>
+            <Button variant="contained">Book Free Estimate Now!</Button>
         </section>
     )
 }

@@ -17,7 +17,7 @@ export default class MyForm extends React.Component {
   }
 
   handleFormSubmit = (e) => {
-    console.log(e);
+    this.setState({ messageLength: 0 });
   }
 
   render() {

@@ -1,4 +1,5 @@
 import headerStyles from "./header.module.css"
+
 function Header() {
   
 //   const sidebar = document.querySelector(".sidebar");

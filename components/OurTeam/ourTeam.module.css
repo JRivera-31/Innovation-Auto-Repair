@@ -1,6 +1,13 @@
 .header {
     text-align: center;
-    padding: 1rem;
+    margin: 2.5rem 0;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 .employees {
@@ -15,15 +22,10 @@
     margin: 0 1em;
 }
 
-.row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
 .details {
     text-align: center;
     margin-bottom: 0.5rem;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .imageDiv {
@@ -36,11 +38,6 @@
 }
 
 @media (max-width: 850px) {
-    .imageDiv {
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
-
     .row {
         flex-direction: column;
     }
@@ -51,5 +48,9 @@
 
     .employee {
         padding-bottom: 1rem;
+    }
+
+    .imageDiv {
+        margin-bottom: 0.5rem;
     }
 }

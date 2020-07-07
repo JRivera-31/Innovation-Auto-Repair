@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
-const Scheme = mongoose.Schema
+const Schema = mongoose.Schema
 
-const AppointmentSchema = new mongoose.Schema({
+const AppointmentSchema = new Schema({
     name: {
         type: String,
         trim: true,

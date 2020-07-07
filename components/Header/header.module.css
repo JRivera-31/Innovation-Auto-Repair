@@ -3,23 +3,24 @@
   width: 100%;
   height: 80px;
   display: block;
-  background-color: #fff ;
+  background-color: var(--main-red);
   position: fixed;
   z-index: 2;
 }
+
 .innerHeader{
   width: 90%;
   height: 100%;
   display: block;
   margin: 0 auto;
-  
 }
+
 .logoContainer{
   height: 100%;
   width: 100px;
   display: table;
   float: left;
-  background-image: url('../../public/images/Innovation_Logo-no-bg.png');
+  background-image: url('../../public/images/Innovation_Logo-no-bg-white.png');
   background-size: cover;
 }
 
@@ -27,6 +28,7 @@
   float: right;
   height: 100%;
 }
+
 .navigation a {
   height: 100%;
   display: table;
@@ -34,18 +36,27 @@
   padding: 0px 20px;
   cursor: pointer;
 }
+
 .navigation a:last-child {
   padding-right: 0;
 }
+
 .navigation a li {
+  font-family: 'Source Sans Pro', sans-serif;
   display: table-cell;
   vertical-align: middle;
   height: 100%;
-  color: #000;
+  color: white;
   font-size: 20px;
+  transition: .3s ease-in-out;
+  opacity: 80%;
 }
+
 .navigation li:hover {
-  color: #A0A0A0;
+  transition: .3s ease-in-out;
+  transform: scale(1.05);
+  transform-origin: center;
+  opacity: 100%;
 }
 
 /*  🔥🔥 Hamburger 🔥🔥 */
@@ -55,6 +66,7 @@
   display: table;
   padding-top: 25px;
 }
+
 .hamburgerMenu {
   width: 35px;
   height: 30px;
@@ -67,45 +79,59 @@
 .line {
   width: 100%;
   height: 3px;
-  background-color: #000;
+  background-color: white;
   transition: all 0.2s;
   z-index: 2;
 }
+
 .rotate1 {
   transform: rotateZ(-405deg) translate(-8px, 6px);
 }
+
 .rotate2 {
   opacity: 0;
 }
+
 .rotate3 {
   transform: rotateZ(405deg) translate(-8px, -6px);
 }
 
 /* 🔥🔥 Sidebar 🔥🔥*/
 .sidebar {
-  background-color: #000;
-  width: 300px;
+  background-color: var(--main-red);
+  width: 100%;
   height: 100%;
   position: fixed;
   top: 0;
-  right: -300px;
+  right: -100%;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: right .2s cubic-bezier(1, 0, 0, 1);
   z-index: 1;
 }
+
 .change {
   right: 0;
 }
+
 .navList {
   text-align: center;
 }
+
 .navItem {
   list-style: none;
   margin: 25px;
+  transition: .3s ease-in-out;
 }
+
+.navItem:hover {
+  transition: .3s ease-in-out;
+  transform: scale(1.05);
+}
+
 .navLink { 
+  font-family: 'Source Sans Pro';
   text-decoration: none;
   color: #fff;
   font-weight: 600;
@@ -113,8 +139,9 @@
   letter-spacing: 1px;
   text-transform: uppercase;
 }
+
 .navLink:hover {
- color: #A0A0A0;
+  opacity: 80%;
 }
 
 /* ===== ❗🔥🔥🔥 media query 🔥🔥🔥❗ ===== */
@@ -122,18 +149,11 @@
   .hamburgerMenu {
       display: flex;
   }
+
   .navigation a li {
       display: none;
   }
-  .logoContainer h1 {
-    color: white;
-    height: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 32px;
-    font-weight: 200;
-  }
+
   .navigation{
     float: right;
     height: 100%;

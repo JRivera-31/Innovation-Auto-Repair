@@ -18,13 +18,15 @@
 .logoContainer{
   height: 60px;
   width: 150px;
-  display: flex;
+  top: 50%;
+  position: absolute;
   float: left;
+  transform: translateY(-50%);
   background-image: url('../../public/images/Innovation_Logo-no-bg-white.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
-}
+  background-position: center; 
+} 
 .navigation{
   float: right;
   height: 100%;

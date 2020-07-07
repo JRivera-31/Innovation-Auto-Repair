@@ -7,21 +7,21 @@
 }
 
 .formTitle {
-    font-family: 'Raleway';
+    font-family: 'Chau Philomene One';
     margin: 0 auto;
-    font-size: 4em;
+    /* font-size: 4em; */
 }
 
 .contactForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .formHr {
     margin: 0 auto;
-    width: 15%;
+    width: 5%;
     border: 1px solid rgb(161, 11, 11);
 }
 

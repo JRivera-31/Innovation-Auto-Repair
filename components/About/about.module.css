@@ -33,6 +33,10 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+.text > p {
+    margin-bottom: 1.75rem;
+}
+
 .boldText {
     font-weight: 700;
 }
@@ -45,8 +49,6 @@
     height: auto;
     margin: 0 auto;
 }
-
-
 
 @media (min-width: 1024px) {
     

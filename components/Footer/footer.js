@@ -14,6 +14,7 @@ export default function Foooter() {
                         <ul>
                             <li>3301 S Texas Ave</li>
                             <li>Bryan, TX 77802</li>
+                            <li>Hours: 6AM-8PM M-F</li>
                         </ul>
                     </Col>
                     {/* Column 2 */}

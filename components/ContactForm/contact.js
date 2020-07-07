@@ -1,30 +1,47 @@
 import React from "react";
+import style from './form.module.css';
+import { Button } from '@material-ui/core'
 
 export default class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.submitForm = this.submitForm.bind(this);
     this.state = {
+      messageLength: 0,
       status: ""
     };
+  }
+
+  handleMessageChange = (e) => {
+    this.setState({ messageLength: e.target.value.length })
+  }
+
+  handleFormSubmit = (e) => {
+    this.setState({ messageLength: 0 });
   }
 
   render() {
     const { status } = this.state;
     return (
-      <form
-        onSubmit={this.submitForm}
-        action="https://formspree.io/xgennnag"
-        method="POST"
-      >
-        {/* <!-- add your custom form HTML here --> */}
-        <label>Email:</label>
-        <input type="email" name="email" />
-        <label>Message:</label>
-        <input type="text" name="message" />
-        {status === "SUCCESS" ? <p>Thanks!</p> : <button>Submit</button>}
-        {status === "ERROR" && <p>Ooops! There was an error.</p>}
-      </form>
+      <div className={style.formDiv}>
+        <h1 className={style.formTitle}>Contact Us</h1>
+        <hr className={style.formHr}/>
+        <form
+          onSubmit={this.submitForm}
+          action="https://formspree.io/xgennnag"
+          method="POST"
+          className={style.contactForm}
+        >
+          {/* <!-- add your custom form HTML here --> */}
+          <label className={style.contactInput}>Email:</label>
+          <input type="email" name="email" placeholder="Email" className={style.contactInput}/>
+          <label className={style.contactInput}>Message:</label>
+          <textarea name="message" id="" cols="30" rows="10" maxLength={800} onChange={() => this.handleMessageChange(event)} placeholder="Message here" className={`${style.contactInput} ${style.contactTextarea}`}></textarea>
+          <p className={`${style.formCharCounter} ${style.contactInput}`}>{this.state.messageLength}/800</p>
+          {status === "SUCCESS" ? <p className={`${style.contactInput} ${style.submitMessage}`}>Message Sent</p> : <button className={`${style.contactInput} ${style.contactSubmit}`} onClick={() => this.handleFormSubmit(event)}>Send Message</button>}
+          {status === "ERROR" && <p className={`${style.contactInput} ${style.submitMessage}`}>Ooops! There was an error.</p>}
+        </form>
+      </div>
     );
   }
 

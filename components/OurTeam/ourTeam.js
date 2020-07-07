@@ -14,19 +14,18 @@ export default function Contact() {
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
                         <div className={styles.details}>
-                            <h4 >First Last</h4>
+                            <h4 >Amy Akhavan</h4>
                             <p>
                                 Position
                             </p>
                         </div>
-                        
                     </div>
                     <div className={styles.employee}>
                         <div className={styles.imageDiv}>
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
                         <div className={styles.details}>
-                            <h4 >First Last</h4>
+                            <h4 >Bruce Baggins</h4>
                             <p>
                                 Position
                             </p>
@@ -37,7 +36,7 @@ export default function Contact() {
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
                         <div className={styles.details}>
-                            <h4 >First Last</h4>
+                            <h4 >Carole Crowe</h4>
                             <p>
                                 Position
                             </p>
@@ -50,7 +49,7 @@ export default function Contact() {
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
                         <div className={styles.details}>
-                            <h4 >First Last</h4>
+                            <h4 >Dennis Dominguez</h4>
                             <p>
                                 Position
                             </p>
@@ -61,7 +60,7 @@ export default function Contact() {
                             <img className={styles.photos} src='https://via.placeholder.com/125' />
                         </div>
                         <div className={styles.details}>
-                            <h4 >First Last</h4>
+                            <h4 >Emmet Einstein</h4>
                             <p>
                                 Position
                             </p>

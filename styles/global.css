@@ -1,3 +1,7 @@
+:root {
+  --main-red: #61191C;
+}
+
 * {
   margin: 0;
   padding: 0;

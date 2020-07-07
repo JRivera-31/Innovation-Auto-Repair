@@ -129,6 +129,17 @@
       display: none;
   }
   .logoContainer h1 {
-      font-size: 22px;
+    color: white;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 32px;
+    font-weight: 200;
+  }
+  .navigation{
+    float: right;
+    height: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
   }
 }

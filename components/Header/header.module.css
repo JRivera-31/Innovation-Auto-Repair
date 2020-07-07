@@ -22,10 +22,10 @@
   background-image: url('../../public/images/Innovation_Logo-no-bg.png');
   background-size: cover;
 }
-
 .navigation{
   float: right;
   height: 100%;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 .navigation a {
   height: 100%;

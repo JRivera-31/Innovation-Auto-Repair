@@ -15,10 +15,7 @@ export default function Home() {
           href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap"
           rel="stylesheet"
         ></link>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
-          rel="stylesheet"
-        ></link>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"></link>
         <link
           rel="shortcut icon"
           type="img/png"

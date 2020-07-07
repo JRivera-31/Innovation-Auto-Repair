@@ -11,10 +11,14 @@
 
 .heroTitle {
     color: white;
-    font-size: 3em;
+    font-size: 6em;
     font-family: 'Chau Philomene One', sans-serif;
 }
 
 .heroText {
+    margin: 1em 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    font-family: sans-serif;
     color: white;
 }

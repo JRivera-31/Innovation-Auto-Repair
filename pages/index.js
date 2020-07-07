@@ -2,6 +2,7 @@ import Header from "../components/Header/Header";
 import Hero from '../components/Hero/Hero';
 import OurTeam from '../components/OurTeam/ourTeam';
 import About from "../components/About/about"
+import Form from "../components/ContactForm/contact"
 
 export default function Home() {
   return (
@@ -14,7 +15,8 @@ export default function Home() {
         <Header />
         <Hero />
         <About />
-        <OurTeam/>
+        <OurTeam />
+        <Form />
       </body>
     </html>
   )

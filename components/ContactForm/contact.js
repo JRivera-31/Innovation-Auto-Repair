@@ -24,8 +24,10 @@ export default class MyForm extends React.Component {
     const { status } = this.state;
     return (
       <div className={style.formDiv}>
-        <h1 className={style.formTitle}>Contact Us</h1>
-        <hr className={style.formHr}/>
+        <div className={style.heading}>
+          <h1>Contact Us</h1>
+          <hr className={style.formHr}/>
+        </div>
         <form
           onSubmit={this.submitForm}
           action="https://formspree.io/xgennnag"
@@ -33,12 +35,12 @@ export default class MyForm extends React.Component {
           className={style.contactForm}
         >
           {/* <!-- add your custom form HTML here --> */}
-          <label className={style.contactInput}>Email:</label>
+          <label className={style.contactLabel}>Email:</label>
           <input type="email" name="email" placeholder="Email" className={style.contactInput}/>
-          <label className={style.contactInput}>Message:</label>
+          <label className={style.contactLabel}>Message:</label>
           <textarea name="message" id="" cols="30" rows="10" maxLength={800} onChange={() => this.handleMessageChange(event)} placeholder="Message here" className={`${style.contactInput} ${style.contactTextarea}`}></textarea>
           <p className={`${style.formCharCounter} ${style.contactInput}`}>{this.state.messageLength}/800</p>
-          {status === "SUCCESS" ? <p className={`${style.contactInput} ${style.submitMessage}`}>Message Sent</p> : <button className={`${style.contactInput} ${style.contactSubmit}`} onClick={() => this.handleFormSubmit(event)}>Send Message</button>}
+          {status === "SUCCESS" ? <p className={`${style.contactInput} ${style.submitMessage}`}>Message Sent</p> : <button className={style.contactSubmit} onClick={() => this.handleFormSubmit(event)}>Send Message</button>}
           {status === "ERROR" && <p className={`${style.contactInput} ${style.submitMessage}`}>Ooops! There was an error.</p>}
         </form>
       </div>

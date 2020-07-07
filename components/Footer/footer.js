@@ -13,7 +13,7 @@ export default function Foooter() {
                         <h4>Innovation Auto Hail Repair</h4>
                         <ul>
                             <li>3301 S Texas Ave</li>
-                            <li>Bryan, TX</li>
+                            <li>Bryan, TX 77802</li>
                         </ul>
                     </Col>
                     {/* Column 2 */}

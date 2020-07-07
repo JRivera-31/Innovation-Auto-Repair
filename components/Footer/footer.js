@@ -31,7 +31,7 @@ export default function Foooter() {
                         <h4>Contact Info</h4>
                         <ul>
                             <li>(970) 539-8184 - Manager</li>
-                            <li>innovation.pdr@gmail.com</li>
+                            <li><a href="mailto:innovation.pdr@gmail.com">innovation.pdr@gmail.com</a></li>
                             <li>Si Habla Español</li>
                         </ul>
                     </Col>

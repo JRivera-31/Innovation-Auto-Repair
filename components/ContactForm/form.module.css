@@ -1,0 +1,52 @@
+.formDiv {
+    height: 50vh;
+    width: 100%;
+    margin-top: 8em;
+    display: flex;
+    flex-direction: column;
+}
+
+.formTitle {
+    font-family: 'Raleway';
+    margin: 0 auto;
+    font-size: 4em;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.formHr {
+    margin: 0 auto;
+    width: 15%;
+    border: 1px solid rgb(161, 11, 11);
+}
+
+.contactInput {
+    padding: .5em 0;
+    padding-left: 1em;
+    margin: .4em auto;
+    width: 30%;
+}
+
+.contactTextarea {
+    resize: none;
+}
+
+.contactSubmit {
+    width: 10%;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.formCharCounter {
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.submitMessage {
+    text-align: center;
+}

@@ -11,7 +11,7 @@ export default function Foooter() {
                     {/* Column 1 */}
                     <Col>
                         <h4>Innovation Auto Hail Repair</h4>
-                        <ul className="list-unstyled">
+                        <ul>
                             <li>3301 S Texas Ave</li>
                             <li>Bryan, TX</li>
                         </ul>
@@ -19,7 +19,7 @@ export default function Foooter() {
                     {/* Column 2 */}
                     <Col>
                         <h4>Services</h4>
-                        <ul className="list-unstyled">
+                        <ul>
                             <li>Paintless Dent Repair</li>
                             <li>Rental Assistance</li>
                             <li>Deductible Assistance</li>
@@ -28,7 +28,7 @@ export default function Foooter() {
                     {/* Column 3 */}
                     <Col>
                         <h4>Contact Info</h4>
-                        <ul className="list-unstyled">
+                        <ul>
                             <li>(970) 539-8184 - Manager</li>
                             <li>innovation.pdr@gmail.com</li>
                             <li>Si Habla Español</li>
@@ -37,8 +37,8 @@ export default function Foooter() {
                 </Row>
                 <Row>
                     <Col sm>
-                        <p>
-                            %copy;{new.Date().getFullYear()} Innovation Auto Hail Repair | All Rights reveserved | Employee Login 
+                        <p className={styles.footer}>
+                            &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | Employee Login 
                         </p>
                     </Col>
                 </Row>        

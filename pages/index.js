@@ -3,6 +3,8 @@ import Hero from "../components/Hero/Hero";
 import OurTeam from "../components/OurTeam/ourTeam";
 import About from "../components/About/about";
 import Form from "../components/ContactForm/contact";
+import Footer from "../components/Footer/footer"
+import utilStyles from "../styles/utils.module.css"
 
 export default function Home() {
   return (
@@ -23,11 +25,16 @@ export default function Home() {
         />
       </head>
       <body>
-        <Header />
-        <Hero />
-        <About />
-        <OurTeam />
-        <Form />
+        <div className={utilStyles.pagecontainer}>
+          <div className={utilStyles.contentwrap}>
+          <Header />
+          <Hero />
+          <About />
+          <OurTeam />
+          <Form />
+          <Footer/>
+          </div>
+        </div>
       </body>
     </html>
   );

@@ -6,6 +6,7 @@ export default function Contact() {
         <div>
             <div className={styles.header}>
                 <h1>Our Team</h1>
+                <hr className={styles.ourTeamHr}/>
             </div>
             <div className={styles.employees}>
                 <div className={styles.row}>

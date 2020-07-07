@@ -5,6 +5,7 @@ export default function About() {
         <div>
             <div>
                 <h1 className={styles.header}>About</h1>
+                <hr className={styles.aboutHr}/>
             </div>
             <div className={styles.container}>
                 <div className={styles.information}>

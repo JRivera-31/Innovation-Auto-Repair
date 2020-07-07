@@ -1,12 +1,24 @@
-.header {
+.ourTeamBody {
+    background-color: black;
+    padding-bottom: 3em;
+}
+
+.heading {
+    padding: 3em 0 1.5em 0;
+    color: white;
     text-align: center;
-    margin: 2.5rem 0;
     font-family: 'Chau Philomene One', sans-serif;
+}
+
+.ourTeamHr {
+    margin: 0 auto;
+    width: 15%;
+    border: 1px solid rgb(161, 11, 11);
 }
 
 .row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -16,10 +28,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    color: white;
 }
 
 .employee {
     margin: 0 1em;
+    padding-bottom: 1rem;
 }
 
 .details {
@@ -30,27 +44,33 @@
 
 .imageDiv {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    
 }
 
 .photos {
     border-radius: 50%;
 }
 
-@media (max-width: 850px) {
+@media (min-width: 850px) {
+    .heading {
+        padding: 4em 0 3em 0;
+    }
+
+    .ourTeamHr {
+        width: 5%;
+    }
+
     .row {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .employees {
         flex-direction: column;
     }
 
-    .employee {
-        padding-bottom: 1rem;
-    }
-
     .imageDiv {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
+        
     }
 }

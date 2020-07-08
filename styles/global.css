@@ -9,3 +9,7 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}

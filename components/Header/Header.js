@@ -46,10 +46,10 @@ function Header() {
           </div>
 
           <ul className={headerStyles.navigation}>
-            <a>
+            <a href="#about-section">
               <li>About</li>
             </a>
-            <a>
+            <a href="#contact-section">
               <li>Contact</li>
             </a>
             <a>

@@ -62,10 +62,10 @@ function Header() {
       <nav className={`${headerStyles.sidebar} ${sidebarChange}`}>
         <ul className={headerStyles.navList}>
           <li className={headerStyles.navItem}>
-            <a className={headerStyles.navLink}>About</a>
+            <a className={headerStyles.navLink} href="#about-section">About</a>
           </li>
           <li className={headerStyles.navItem}>
-            <a className={headerStyles.navLink}>Contact</a>
+            <a className={headerStyles.navLink} href="#contact-section">Contact</a>
           </li>
           <li className={headerStyles.navItem}>
             <a className={headerStyles.navLink}>Book With Us</a>

@@ -15,9 +15,6 @@
 }
 
 .container {
-    width: 100%;
-    margin: 1em auto;
-    padding: 0 1.5rem;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -26,7 +23,7 @@
 .text {
     display: flex;
     flex-direction: column;
-    width: 75vw;
+    width: 80vw;
     margin: 0 auto 1em;
     font-size: 18px;
     line-height: 1.6;
@@ -49,26 +46,24 @@
 }
 
 .imageDiv {
-    margin: 1em auto;
+    margin: 0 auto;
 }
 
 .image {
     height: auto;
-    margin: 0 auto;
 }
 
-@media (min-width: 1024px) {
-    
+@media screen and (min-width: 1024px) {
     .text {
-        width: 55vw;
-        margin-right: 1.5em;
+        margin-right: 2em;
         font-size: 20px;
         text-align: left;
     }
 
     .container {
-        width: 65vw;
-        margin: 1.5em auto;
+        width: 75vw;
+        margin: 0 auto;
+        padding: 1.5rem;
         flex-direction: row;
         justify-content: center;
         align-items: center;
@@ -76,7 +71,6 @@
 
     .heading {
         padding: 4em 0 3em 0;
-        
     }
 
     .aboutHr {
@@ -87,13 +81,18 @@
         width: 400px;
         margin: 0 auto;
     }
-    
-   
 }
 
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .image {
         width: 325px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .image {
+        width: 250px;
         margin: 0 auto;
     }
 }

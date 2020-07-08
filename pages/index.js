@@ -32,7 +32,7 @@ export default function Home() {
           <About />
           <OurTeam />
           <Form />
-          <Footer/>
+          <Footer />
           </div>
         </div>
       </body>

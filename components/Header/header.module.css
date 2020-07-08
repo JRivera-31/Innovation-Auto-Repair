@@ -55,15 +55,14 @@
   color: white;
   font-size: 20px;
   transition: .3s ease-in-out;
-  opacity: 80%;
-  text-decoration: none;
+  opacity: 0.8;
 }
 
 .navigation li:hover {
   transition: .3s ease-in-out;
   transform: scale(1.05);
   transform-origin: center;
-  opacity: 100%;
+  opacity: 1;
 }
 
 /*  🔥🔥 Hamburger 🔥🔥 */

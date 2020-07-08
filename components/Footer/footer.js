@@ -9,16 +9,18 @@ export default function Foooter() {
             <Container>
             <Row>
                     {/* Column 1 */}
-                    <Col>
+                    <Col lg={4} sm={12} className={styles.bizInfo}>
                         <h4>Innovation Auto Hail Repair</h4>
+                        <div>
                         <ul>
                             <li>3301 S Texas Ave</li>
                             <li>Bryan, TX 77802</li>
                             <li>Hours: 6AM-8PM M-F</li>
                         </ul>
+                        </div>
                     </Col>
                     {/* Column 2 */}
-                    <Col>
+                    <Col lg={4} sm={6}>
                         <h4>Services</h4>
                         <ul>
                             <li>Paintless Dent Repair</li>
@@ -27,7 +29,7 @@ export default function Foooter() {
                         </ul>
                     </Col>
                     {/* Column 3 */}
-                    <Col>
+                    <Col lg={4} sm={6}>
                         <h4>Contact Info</h4>
                         <ul>
                             <li>(970) 539-8184 - Manager</li>

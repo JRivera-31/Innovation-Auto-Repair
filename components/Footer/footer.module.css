@@ -1,8 +1,14 @@
 .mainfooter {
     color: white;
     background-color: #61191C;
+<<<<<<< HEAD
     padding-top: 1em;
     height: 12em;
+=======
+    margin-top: 3em;
+    height: 15em;
+    padding-top: 3em;
+>>>>>>> 006ac99464ee460b8419e2d5f0f66d864b00e6b8
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
 }

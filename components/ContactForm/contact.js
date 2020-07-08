@@ -23,7 +23,7 @@ export default class MyForm extends React.Component {
   render() {
     const { status } = this.state;
     return (
-      <div className={style.formDiv}>
+      <div className={style.formDiv} id="contact-section">
         <div className={style.heading}>
           <h1>Contact Us</h1>
           <hr className={style.formHr}/>

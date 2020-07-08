@@ -20,6 +20,10 @@ function Header() {
     setIsOpen(!isOpen);
   };
 
+  const Refresher = () => {
+    window.location.reload();
+  }
+
   const rotate1 = isOpen ? headerStyles.rotate1 : "";
   const rotate2 = isOpen ? headerStyles.rotate2 : "";
   const rotate3 = isOpen ? headerStyles.rotate3 : "";
@@ -29,7 +33,7 @@ function Header() {
     <div>
       <div className={headerStyles.header}>
         <div className={headerStyles.innerHeader}>
-          <div className={headerStyles.logoContainer}>
+          <div onClick={Refresher} className={headerStyles.logoContainer}>
           </div>
           <div className={headerStyles.navHolder}>
             <div onClick={toggleOpen} className={headerStyles.hamburgerMenu}>

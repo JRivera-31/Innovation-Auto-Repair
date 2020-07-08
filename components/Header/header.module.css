@@ -163,4 +163,13 @@
     height: 100%;
     font-family: 'Source Sans Pro', sans-serif;
   }
+
+  .navItem {
+    color: white;
+  }
+
+  .navLink:hover {
+    color: white;
+    text-decoration: none;
+  }
 }

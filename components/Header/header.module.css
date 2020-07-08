@@ -55,7 +55,7 @@
   color: white;
   font-size: 20px;
   transition: .3s ease-in-out;
-  opacity: 80%;
+  /* opacity: 80%; */
 }
 
 .navigation li:hover {

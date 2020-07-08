@@ -26,7 +26,6 @@ export default function About() {
                         Please contact us with any questions or concerns.
                     </p>
                 </div>
-                <Link href="/ContactForm/contact"><a>Contact Us</a></Link>
                 <div className={styles.imageDiv}>
                     <img className={styles.image} src='/images/car.jpg' />  
                 </div>

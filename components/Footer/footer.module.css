@@ -12,6 +12,10 @@
 }
 
 @media only screen and (max-width: 992px) {
+    .mainfooter {
+        height: 24em;
+    }
+
     .bizInfo{
         display: flex;
         flex-direction: column;

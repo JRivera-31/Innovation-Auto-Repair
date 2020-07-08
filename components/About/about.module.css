@@ -37,6 +37,13 @@
     margin-bottom: 1.75rem;
 }
 
+.anchor {
+    color: black;
+} .anchor:hover {
+    text-decoration: none;
+    color: black;
+}
+
 .boldText {
     font-weight: 700;
 }

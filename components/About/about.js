@@ -1,5 +1,4 @@
 import styles from "./about.module.css";
-import { Element } from 'react-scroll';
 
 export default function About() {
     return (

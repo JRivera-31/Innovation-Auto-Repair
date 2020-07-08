@@ -1,10 +1,11 @@
 .mainfooter {
     color: white;
     background-color: #61191C;
-    padding-top: 1em;
+    padding-top: 1.5em;
     position: relative;
-    bottom: 0;
+    /* bottom: 0; */
     width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .footer {

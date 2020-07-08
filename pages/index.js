@@ -27,12 +27,21 @@ export default function Home() {
       <body>
         <div className={utilStyles.pagecontainer}>
           <div className={utilStyles.contentwrap}>
+<<<<<<< HEAD
           <Header />
           <Hero />
           <About />
           <OurTeam />
           <Form />
           <Footer />
+=======
+            <Header />
+            <Hero />
+            <About />
+            <OurTeam />
+            <Form />
+            <Footer/>
+>>>>>>> 485a59fd1c1c9f389197410c32404b1b6f3da952
           </div>
         </div>
       </body>

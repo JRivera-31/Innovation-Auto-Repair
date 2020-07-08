@@ -25,7 +25,8 @@
   background-image: url('../../public/images/Innovation_Logo-no-bg-white.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center; 
+  background-position: center;
+  cursor: pointer; 
 } 
 .navigation{
   float: right;
@@ -39,6 +40,7 @@
   float: left;
   padding: 0px 20px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .navigation a:last-child {

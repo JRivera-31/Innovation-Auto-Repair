@@ -1,11 +1,12 @@
 import styles from "./about.module.css";
+import { Element } from 'react-scroll';
 
 export default function About() {
     return (
-        <div className={styles.aboutBody}>
+        <div className={styles.aboutBody} id="about-section">
             <div className={styles.heading}>
                 <h1 >About</h1>
-                <hr className={styles.aboutHr}/>
+                <hr className={styles.aboutHr} />
             </div>
             <div className={styles.container}>
                 <div className={styles.text}>
@@ -19,11 +20,13 @@ export default function About() {
                         Have a non-hail related dent? We fix those too!
                     </p>
                     <p className={styles.boldText}>
+                        <a className={styles.anchor} href='#contact-section'>
                         Please contact us with any questions or concerns.
+                        </a>
                     </p>
                 </div>
                 <div className={styles.imageDiv}>
-                    <img className={styles.image} src='/images/car.jpg' />  
+                    <img className={styles.image} src='/images/car.jpg' />
                 </div>
             </div>
         </div>

@@ -11,7 +11,8 @@ const bodyParser = require("body-parser")
 
 // Mongoose setup
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/InnovationAutoRepair", {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useUnifiedTopology: true
 })
 mongoose.connection.on("error", err => console.log(`Mongoose connection err:\n${err}`))
 
@@ -19,7 +20,7 @@ app.prepare().then(() => {
   const server = express()
   server.use(bodyParser.json())
   server.use(bodyParser.urlencoded({extended: true}))
-  server.use("/api/", require("./routes/index"))
+  server.use("/api", require("./routes/index"))
 
   server.all('*', (req, res) => {
     return handle(req, res)

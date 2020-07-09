@@ -12,6 +12,8 @@ const handle = app.getRequestHandler()
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/InnovationAutoRepair")
 mongoose.connection.on("error", err => console.log(`Mongoose connection err:\n${err}`))
 
+const db = require("./models")
+
 app.prepare().then(() => {
   const server = express()
 

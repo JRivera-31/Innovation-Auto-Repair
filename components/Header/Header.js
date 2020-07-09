@@ -64,44 +64,44 @@ function Header() {
   return (
     <div>
       <div className={headerStyles.header}>
-        <div className={headerStyles.topHeader}> 
-        <div className={headerStyles.modalText}>
-          <p>Refer a friend, get $200. {""}
-  <span onClick={handleOpen}>Learn more.</span>
-          </p>
+        <div className={headerStyles.topHeader}>
+          <div className={headerStyles.modalText}>
+            <p>
+              Refer a friend, get $200. {""} <span onClick={handleOpen}>Learn more.</span>
+            </p>
           </div>
-          </div>
+        </div>
         <div className={headerStyles.innerHeader}>
           <div onClick={Refresher} className={headerStyles.logoContainer}></div>
-          
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">Our Referral Program:</h2>
-            <div id="transition-modal-description">
-              <br/>
-              <p>
-                Refer a friend and get $200 if they book with us.
+
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={open}>
+              <div className={classes.paper}>
+                <h2 id="transition-modal-title">Our Referral Program:</h2>
+                <div id="transition-modal-description">
+                  <br />
+                  <p>
+                    Refer a friend and get $200 if they book with us.
               </p>
-              <p>
-                Just ask them to mention your name to one of our staff!
+                  <p>
+                    Just ask them to mention your name to one of our staff!
               </p>
-            </div>
-          </div>
-        </Fade>
-      </Modal>
-    
+                </div>
+              </div>
+            </Fade>
+          </Modal>
+
           <div className={headerStyles.navHolder}>
             <div onClick={toggleOpen} className={headerStyles.hamburgerMenu}>
               <div

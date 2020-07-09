@@ -59,20 +59,34 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.navigation a {
+.navigation > a {
   height: 100%;
   display: table;
   float: left;
   padding: 0px 20px;
   cursor: pointer;
   text-decoration: none;
+  color: white;
 }
 
 .navigation a:last-child {
   padding-right: 0;
 }
 
-.navigation a li {
+.navigation > a li{
+  font-family: 'Source Sans Pro', sans-serif;
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  color: white;
+  font-size: 20px;
+  transition: .3s ease-in-out;
+  opacity: 0.8;
+  text-decoration: none;
+}
+
+/* had to add this to handle the last li in the main navbar */
+.navigation li > a{
   font-family: 'Source Sans Pro', sans-serif;
   display: table-cell;
   vertical-align: middle;

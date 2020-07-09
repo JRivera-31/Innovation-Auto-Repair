@@ -17,23 +17,28 @@ const AppointmentSchema = new Schema({
         type: Date,
         required: "Date is required!"
     },
-    time: {
+    availableTimes: {
         type: Array,
-        required: "A time is required!"
+    },
+    isAvailable: {
+        type: Boolean,
+        default: true,
+        required: true
     }
 })
 
 class newAppointment {
-    constructor({ id, name, email, date, time }) {
+    constructor({ id, name, email, date, availableTimes, isAvailable }) {
         this.id = id
         this.name = name
         this.email = email
         this.date = date
-        this.time = time
+        this.availableTimes = availableTimes
+        this.isAvailable = isAvailable
     }
 }
 
 AppointmentSchema.loadClass(newAppointment)
-let Appointment = mongoose.model("User", UserSchema)
+let Appointment = mongoose.model("Appointment", AppointmentSchema)
 
 module.exports = Appointment

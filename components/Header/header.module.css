@@ -1,16 +1,41 @@
  /* 🔥🔥 Header 🔥🔥  */
 .header{
   width: 100%;
-  height: 80px;
+  height: 100px;
   display: block;
   background-color: var(--main-red);
   position: fixed;
   z-index: 2;
 }
 
+.topHeader{
+  width: 100%;
+  height: 25px;
+  background-color: #000;
+  text-align: center;
+}
+
+.modalText{
+  color: #fff;
+  height: 100%;
+  display: inline-block;
+}
+
+.modalText span {
+  cursor: pointer;
+}
+
+.modalText span:hover{
+  text-decoration: underline;
+}
+
+#transition-modal-title {
+  padding-bottom: 1rem;
+}
+
 .innerHeader{
   width: 90%;
-  height: 100%;
+  height: 80px;
   display: block;
   margin: 0 auto;
 }
@@ -18,16 +43,17 @@
 .logoContainer{
   height: 60px;
   width: 150px;
-  top: 50%;
+  top: 30%;
   position: absolute;
   float: left;
-  transform: translateY(-50%);
   background-image: url('../../public/images/Innovation_Logo-no-bg-white.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: pointer; 
+  cursor: pointer;
+  
 } 
+
 .navigation{
   float: right;
   height: 100%;
@@ -56,6 +82,7 @@
   font-size: 20px;
   transition: .3s ease-in-out;
   opacity: 0.8;
+  text-decoration: none;
 }
 
 .navigation li:hover {
@@ -174,4 +201,9 @@
     color: white;
     text-decoration: none;
   }
+}
+
+.learnLink { 
+  text-decoration: underline;
+  color: lightblue;
 }

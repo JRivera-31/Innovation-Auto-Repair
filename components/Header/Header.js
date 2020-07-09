@@ -66,8 +66,8 @@ function Header() {
       <div className={headerStyles.header}>
         <div className={headerStyles.topHeader}> 
         <div className={headerStyles.modalText}>
-          <p>Refer a friend, Get $200
-          <span onClick={handleOpen}> Learn more</span>
+          <p>Refer a friend, Get $200. {""}
+  <span onClick={handleOpen}>Learn more</span>
           </p>
           </div>
           </div>

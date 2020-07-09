@@ -18,7 +18,9 @@
     font-size: 1rem;
     text-align: center;
 }
-
+.employee:hover {
+    cursor: pointer;
+}
 @media only screen and (max-width: 992px) {
     .mainfooter {
         padding: 1.5em 0;

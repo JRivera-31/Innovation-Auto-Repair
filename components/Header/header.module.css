@@ -36,15 +36,15 @@
 .logoContainer{
   height: 60px;
   width: 150px;
-  top: 50%;
+  top: 30%;
   position: absolute;
   float: left;
-  transform: translateY(-50%);
   background-image: url('../../public/images/Innovation_Logo-no-bg-white.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  cursor: pointer; 
+  cursor: pointer;
+  
 } 
 
 .navigation{

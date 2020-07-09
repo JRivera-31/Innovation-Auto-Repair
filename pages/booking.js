@@ -19,9 +19,9 @@ export default function Booking() {
                 />
             </head>
             <body>
-                <div className={utilStyles.pagecontainer}>
-                    <div className={styles.container}>
-                        <h3 className={styles.header}>
+                <div>
+                    <div>
+                        <h3>
                             Details:
                         </h3>
                         <p>

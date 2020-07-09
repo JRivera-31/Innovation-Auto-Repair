@@ -136,10 +136,9 @@ function Header() {
           <li className={headerStyles.navItem}>
             <a className={headerStyles.navLink} href="#contact-section">Contact</a>
           </li>
+          
           <li className={headerStyles.navItem}>
-            <Link href="/booking">
-              <a className={headerStyles.navLink}>Book With Us</a>
-            </Link>
+            <a className={headerStyles.navLink} href="../pages/booking">Book With Us</a>
           </li>
         </ul>
       </nav>

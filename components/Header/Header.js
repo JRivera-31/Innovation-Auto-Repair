@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+
 import headerStyles from "./header.module.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
+import Link from "next/link";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +29,7 @@ function Header() {
   };
 
   const Refresher = () => {
-    window.location.reload();
+    window.location.assign('/index');
   }
   const rotate1 = isOpen ? headerStyles.rotate1 : "";
   const rotate2 = isOpen ? headerStyles.rotate2 : "";
@@ -115,13 +117,17 @@ function Header() {
 
           <ul className={headerStyles.navigation}>
             <a href="#about-section">
-              <li>About</li>
+              <li >About</li>
             </a>
             <a href="#contact-section">
               <li>Contact</li>
             </a>
             <a>
-              <li>Book With Us</li>
+              <li>
+              <Link href="/booking">
+                <a>Book With Us</a>
+              </Link>
+              </li>
             </a>
           </ul>
         </div>
@@ -136,7 +142,9 @@ function Header() {
             <a className={headerStyles.navLink} href="#contact-section">Contact</a>
           </li>
           <li className={headerStyles.navItem}>
-            <a className={headerStyles.navLink}>Book With Us</a>
+            <Link href="/booking">
+              <a className={headerStyles.navLink}>Book With Us</a>
+            </Link>
           </li>
         </ul>
       </nav>

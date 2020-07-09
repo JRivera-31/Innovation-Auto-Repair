@@ -14,11 +14,13 @@
   background-color: #000;
   text-align: center;
 }
+
 .modalText{
   color: #fff;
   height: 100%;
   display: inline-block;
 }
+
 .modalText span {
   cursor: pointer;
 }
@@ -26,6 +28,7 @@
 .modalText span:hover{
   text-decoration: underline;
 }
+
 #transition-modal-title {
   padding-bottom: 1rem;
 }

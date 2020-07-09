@@ -7,10 +7,10 @@ export default function Foooter() {
     return (
         <div className={styles.mainfooter}>
             <Container>
-            <Row>
+            <Row className={styles.bizInfo}>
                     {/* Column 1 */}
-                    <Col lg={4} sm={12} className={styles.bizInfo}>
-                        <h4>Innovation Auto Hail Repair</h4>
+                    <Col lg={4} sm={12}>
+                        <h4 className={styles.heading}>Innovation Auto Hail Repair</h4>
                         <div>
                         <ul>
                             <li>3301 S Texas Ave</li>
@@ -21,7 +21,7 @@ export default function Foooter() {
                     </Col>
                     {/* Column 2 */}
                     <Col lg={4} sm={6}>
-                        <h4>Services</h4>
+                        <h4 className={styles.heading}>Services</h4>
                         <ul>
                             <li>Paintless Dent Repair</li>
                             <li>Rental Assistance</li>
@@ -30,7 +30,7 @@ export default function Foooter() {
                     </Col>
                     {/* Column 3 */}
                     <Col lg={4} sm={6}>
-                        <h4>Contact Info</h4>
+                        <h4 className={styles.heading}>Contact Info</h4>
                         <ul>
                             <li>(970) 539-8184 - Manager</li>
                             <li><a href="mailto:innovation.pdr@gmail.com">innovation.pdr@gmail.com</a></li>
@@ -39,7 +39,7 @@ export default function Foooter() {
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm>
+                    <Col>
                         <p className={styles.footer}>
                             &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | Employee Login 
                         </p>

@@ -43,7 +43,7 @@
 .logoContainer{
   height: 60px;
   width: 150px;
-  top: 30%;
+  top: 33%;
   position: absolute;
   float: left;
   background-image: url('../../public/images/Innovation_Logo-no-bg-white.png');
@@ -51,7 +51,6 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
-  
 } 
 
 .navigation{

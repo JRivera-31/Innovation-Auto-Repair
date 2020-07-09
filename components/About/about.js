@@ -26,7 +26,7 @@ export default function About() {
                     </p>
                 </div>
                 <div className={styles.imageDiv}>
-                    <img className={styles.image} src='/images/car.jpg' />
+                    <img className={styles.image} src='/images/car-min.jpg' />
                 </div>
             </div>
         </div>

@@ -13,7 +13,8 @@
 
 @media only screen and (max-width: 992px) {
     .mainfooter {
-        height: 24em;
+        height: 30em;
+        text-align: center;
     }
 
     .bizInfo{

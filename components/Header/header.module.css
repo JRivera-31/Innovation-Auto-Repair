@@ -1,16 +1,34 @@
  /* 🔥🔥 Header 🔥🔥  */
 .header{
   width: 100%;
-  height: 80px;
+  height: 100px;
   display: block;
   background-color: var(--main-red);
   position: fixed;
   z-index: 2;
 }
 
+.topHeader{
+  width: 100%;
+  height: 20px;
+  background-color: #000;
+  text-align: center;
+}
+.modalText{
+  color: #fff;
+  height: 100%;
+  display: inline-block;
+}
+.modalText span {
+  cursor: pointer;
+}
+
+.modalText span:hover{
+  text-decoration: underline;
+}
 .innerHeader{
   width: 90%;
-  height: 100%;
+  height: 80px;
   display: block;
   margin: 0 auto;
 }
@@ -28,6 +46,7 @@
   background-position: center;
   cursor: pointer; 
 } 
+
 .navigation{
   float: right;
   height: 100%;
@@ -56,6 +75,7 @@
   font-size: 20px;
   transition: .3s ease-in-out;
   opacity: 0.8;
+  text-decoration: none;
 }
 
 .navigation li:hover {

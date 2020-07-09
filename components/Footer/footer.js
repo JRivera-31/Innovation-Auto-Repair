@@ -42,7 +42,7 @@ export default function Foooter() {
                 <Row>
                     <Col>
                         <p className={styles.footer}>
-                            &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | <Link className={styles.employee} href="/employee">Employee Login</Link> 
+                            &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | <Link href="/employee"><a className={styles.employee}>Employee Login</a></Link> 
                         </p>
                     </Col>
                 </Row>        

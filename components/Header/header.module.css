@@ -26,6 +26,10 @@
 .modalText span:hover{
   text-decoration: underline;
 }
+#transition-modal-title {
+  padding-bottom: 1rem;
+}
+
 .innerHeader{
   width: 90%;
   height: 80px;

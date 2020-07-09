@@ -67,7 +67,7 @@ function Header() {
         <div className={headerStyles.topHeader}>
           <div className={headerStyles.modalText}>
             <p>
-              Refer a friend, get $200. {""} <span onClick={handleOpen}>Learn more.</span>
+              Refer a friend and get $200. {""} <span className={headerStyles.learnLink} onClick={handleOpen}>Learn more.</span>
             </p>
           </div>
         </div>
@@ -89,15 +89,12 @@ function Header() {
             <Fade in={open}>
               <div className={classes.paper}>
                 <h2 id="transition-modal-title">Our Referral Program:</h2>
-                <div id="transition-modal-description">
-                  <br />
-                  <p>
-                    Refer a friend and get $200 if they book with us.
-              </p>
-                  <p>
-                    Just ask them to mention your name to one of our staff!
-              </p>
-                </div>
+                <p id="transition-modal-description">
+                  Yup, that's right! If you refer someone to us and they get their car damage repaired with us, you get $200!
+                </p>
+                <p>
+                  Just make sure the person you refer provides us with your email and we will contact you to arrange payment!
+                </p>
               </div>
             </Fade>
           </Modal>

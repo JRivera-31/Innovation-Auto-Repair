@@ -1,5 +1,4 @@
 import styles from "./about.module.css";
-import Link from "next/link"
 
 export default function About() {
     return (
@@ -26,9 +25,7 @@ export default function About() {
                     </p>
                 </div>
                 <div className={styles.imageDiv}>
-
                     <img className={styles.image} src='/images/car-min.jpg' alt="Picture of orange car" />
-
                 </div>
             </div>
         </div>

@@ -1,7 +1,7 @@
 .heroImg {
     height: 100vh;
     width: 100%;
-    background-image: url('../../public/images/garagePlaceholder.jpg');
+    background-image: url('../../public/images/garagePlaceholder-min.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;

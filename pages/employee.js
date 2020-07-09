@@ -1,8 +1,12 @@
+import Paper from "@material-ui/core/Paper"
+import utilStyles from "../styles/utils.module.css"
+
 export default function Employee() {
     return (
-    <div>
-      <div className="container w-50">
-          <form className="p-5">
+    <div className={utilStyles.background}>
+        <div className="container w-50">
+        <Paper>
+          <form className={utilStyles.form}>
             <h1>Employee Login</h1>
             <div className="form-group">
               <label htmlFor="exampleInputEmail1">Username</label>
@@ -13,8 +17,9 @@ export default function Employee() {
               <input type="password" className="form-control" id="exampleInputPassword1" />
             </div>
             <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
-        </div>
+            </form>
+            </Paper> 
+        </div> 
     </div>
     )
 }

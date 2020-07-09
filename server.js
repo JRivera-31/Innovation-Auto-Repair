@@ -9,7 +9,7 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 // Mongoose setup
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/InnovationAutoRepair")
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/InnovationAutoRepair")
 mongoose.connection.on("error", err => console.log(`Mongoose connection err:\n${err}`))
 
 app.prepare().then(() => {

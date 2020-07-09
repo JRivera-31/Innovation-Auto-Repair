@@ -64,38 +64,41 @@ function Header() {
   return (
     <div>
       <div className={headerStyles.header}>
-        <div className={headerStyles.topHeader}> 
-        <div className={headerStyles.modalText}>
-          <p>Refer a friend, Get $200. {""}
-          <span className={headerStyles.learnLink} onClick={handleOpen}>Learn more</span>
-          </p>
+        <div className={headerStyles.topHeader}>
+          <div className={headerStyles.modalText}>
+            <p>
+              Refer a friend and get $200. {""} <span className={headerStyles.learnLink} onClick={handleOpen}>Learn more.</span>
+            </p>
           </div>
-          </div>
+        </div>
         <div className={headerStyles.innerHeader}>
           <div onClick={Refresher} className={headerStyles.logoContainer}></div>
-          
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <h2 id="transition-modal-title">Our Referral Program:</h2>
-                <p id="transition-modal-description">Yup that's right! If you refer someone to us and they get their car damage <br/>
-                repaired with us, you get $200! Just make sure the person you refer provides <br/> us with your email and we will contact
-                you to arrange payment!</p>
-          </div>
-        </Fade>
-      </Modal>
-    
+
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={open}>
+              <div className={classes.paper}>
+                <h2 id="transition-modal-title">Our Referral Program:</h2>
+                <p id="transition-modal-description">
+                  Yup, that's right! If you refer someone to us and they get their car damage repaired with us, you get $200!
+                </p>
+                <p>
+                  Just make sure the person you refer provides us with your email and we will contact you to arrange payment!
+                </p>
+              </div>
+            </Fade>
+          </Modal>
+
           <div className={headerStyles.navHolder}>
             <div onClick={toggleOpen} className={headerStyles.hamburgerMenu}>
               <div

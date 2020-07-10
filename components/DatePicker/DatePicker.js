@@ -4,6 +4,7 @@ import setHours from 'date-fns/setHours'
 import setMinutes from 'date-fns/setMinutes';
 import getDay from 'date-fns/getDay';
 import '../BookingForm/form.module.css';
+import API from "../../pages/api/API"
 
 const datePicker = () => {
     const [startDate, setStartDate] = useState(
@@ -14,6 +15,12 @@ const datePicker = () => {
       const day = getDay(date);
       return day !== 0 && day !== 6;
     };
+  
+    const getData = () => {
+      API.getAppointmentData().then(res => {
+        console.log(res.data)
+      })
+    }
 
     return (
       <DatePicker

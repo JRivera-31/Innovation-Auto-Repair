@@ -37,7 +37,7 @@ export default class BookingForm extends React.Component {
                     <input className={style.formInput} type='text' placeholder='Phone Number'></input>
                     <label className={style.formLabel}>Description of Damage:</label>
                     <textarea className={`${style.formInput} ${style.formTextArea}`} type='text' onChange={() => this.handleMessageChange(event)} placeholder='Please provide a brief description' cols="30" rows="5" maxLength={500}></textarea>
-                    <p className={`${style.formCharCounter} ${style.formInput}`}>{this.state.messageLength}/500</p>
+                    <p className={`${style.formCharCounter} ${style.formInput}`}>{this.state.messageLength}/300</p>
                     <label className={style.formLabel}>Select Date & Time:</label>
                     <div className={`${style.dateDiv} ${style.dateInput}`}>
                     <DatePicker

@@ -17,7 +17,7 @@ const AppointmentSchema = new Schema({
         type: Date,
         required: "Date is required!"
     },
-    availableTimes: [{ date: String, times:{ time: String, isAvailable: { type: Boolean} }}]
+    availableTimes: [{ date: Number, times:{ time: String, isAvailable: { type: Boolean} }}]
 })
 
 class newAppointment {

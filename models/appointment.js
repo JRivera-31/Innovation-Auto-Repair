@@ -13,11 +13,11 @@ const AppointmentSchema = new Schema({
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
         required: "Email address is required!"
     },
-    date: {
+    selectedTimes: {
         type: Date,
         required: "Date is required!"
     },
-    availableTimes: [{ day: Number, times:{ time: String, isAvailable: { type: Boolean} }}]
+    availableTimes: [{ date: String, times:{ time: String, isAvailable: { type: Boolean} }}]
 })
 
 class newAppointment {

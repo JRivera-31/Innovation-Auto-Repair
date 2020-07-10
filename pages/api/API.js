@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const API = {
-  get: () => {
+  getAppointmentData: () => {
     return axios.get("/api/appointments")
   }
 }

@@ -5,15 +5,15 @@ import BookingForm from '../components/BookingForm/bookingForm';
 import API from "./api/API"
 
 export default function Booking() {
-  const test = () => {
-    API.get().then(res => {
-      console.log(res.data)
+  const getData = () => {
+    API.getAppointmentData().then(res => {
+      console.log(res.data[0].dateAndTime)
     })
   }
 
   return (
     <div>
-      <button onClick={test}>Test</button>
+      <button onClick={getData}>Test</button>
           <div className={utilStyles.pagecontainer}>
             <BookingDetails />
             <BookingForm />

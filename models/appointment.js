@@ -13,20 +13,30 @@ const AppointmentSchema = new Schema({
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
         required: "Email address is required!"
     },
-    selectedTimes: {
-        type: Date,
-        required: "Date is required!"
+    phonenumber: {
+        type: String,
+        trim: true,
+        required: "Please include your phone number!"
     },
-    availableTimes: [{ date: String, times:{ time: String, isAvailable: { type: Boolean} }}]
+    description: {
+        type: String,
+        trim: true,
+        maxlength: 300
+    },
+    dateAndTime: {
+        type: String,
+        required: "Must include a date and time!"
+    }
 })
 
 class newAppointment {
-    constructor({ id, name, email, date, availableTimes}) {
+    constructor({ id, name, email, phonenumber, description, date}) {
         this.id = id
         this.name = name
         this.email = email
+        this.phonenumber = phonenumber
+        this.description = description
         this.date = date
-        this.availableTimes = availableTimes
     }
 }
 

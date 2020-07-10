@@ -4,6 +4,24 @@
     text-align: center;
 }
 
-.header {
-    font-family: 'Chau Philomene One', sans-serif;
+.heading {
+    padding: 3em 0 1.5em 0;
+    font-family: 'Chau Philomene One';
+    text-align: center;
+}
+
+.formHr {
+    margin: 0 auto;
+    width: 25%;
+    border: 1px solid rgb(161, 11, 11);
+}
+
+@media screen and (min-width: 1024px) {
+    .heading {
+        padding: 4em 0 3em 0;
+    }
+
+    .formHr {
+        width: 5%;
+    }
 }

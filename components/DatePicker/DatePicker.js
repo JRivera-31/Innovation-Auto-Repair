@@ -3,6 +3,7 @@ import { useState } from 'react';
 import setHours from 'date-fns/setHours'
 import setMinutes from 'date-fns/setMinutes';
 import getDay from 'date-fns/getDay';
+import '../BookingForm/form.module.css';
 
 const datePicker = () => {
     const [startDate, setStartDate] = useState(
@@ -28,6 +29,7 @@ const datePicker = () => {
         minTime={setHours(setMinutes(new Date(), 0), 9)}
         maxTime={setHours(setMinutes(new Date(), 0), 17)}
         dateFormat="MMMM d, yyyy h:mm aa"
+        className='datePicker'
       />
     );
   };

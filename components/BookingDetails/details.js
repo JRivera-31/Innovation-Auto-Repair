@@ -7,7 +7,7 @@ export default function Details() {
                 Details:
             </h3>
             <p>
-               HELLLOOOOOO!!
+            Each appointment includes a free full detailing!
             </p>
         </section>
     );

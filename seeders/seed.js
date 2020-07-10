@@ -19,7 +19,7 @@ let appointmentSeeds = [
 db.Appointments.deleteMany({})
     .then(() => db.Appointments.collection.insertMany(appointmentSeeds))
     .then(data => {
-        console.log(data.result.n)
+        console.log(data.result.n + "seeds entered")
         process.exit(0)
     })
     .catch(err => {

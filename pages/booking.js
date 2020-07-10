@@ -7,7 +7,6 @@ export default function Booking() {
     return (
         <div>
           <div className={utilStyles.pagecontainer}>
-            <Header />
             <BookingDetails />
             <BookingForm />
           </div>

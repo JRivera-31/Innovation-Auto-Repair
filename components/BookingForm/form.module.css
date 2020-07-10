@@ -12,11 +12,74 @@
 }
 
 .form {
-    width: 35vw;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding-bottom: 4em;
     font-family: 'Source Sans Pro', sans-serif;
+}
+
+.formHr {
+    margin: 0 auto;
+    width: 15%;
+    border: 1px solid rgb(161, 11, 11);
+}
+
+.formLabel {
+    padding: .5em;
+    margin: .4em auto;
+    width: 65%;
+}
+
+.formInput {
+    padding: .5em 0;
+    padding-left: 1em;
+    margin: .4em auto;
+    width: 65%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.formTextArea {
+    resize: none;
+}
+
+.bookingSubmit {
+    width: 30%;
+    margin: .4em auto;
+    padding: .5em 0;
+    border: 2px solid rgba(31, 31, 31, 0.801);
+    border-radius: 14px;
+    background-color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 400px) {
+    .formLabel,
+    .formInput {
+        width: 75%;
+    }
+
+    .bookingSubmit {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .heading {
+        padding: 4em 0 3em 0;
+    }
+
+    .formHr {
+        width: 5%;
+    }
+
+    .formLabel,
+    .formInput {
+        width: 45%;
+    }
+
+    .bookingSubmit {
+        width: 15%;
+    }
 }

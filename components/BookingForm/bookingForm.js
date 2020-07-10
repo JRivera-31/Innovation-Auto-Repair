@@ -8,7 +8,7 @@ export default class BookingForm extends React.Component {
         return (
             <div className={style.formDiv}>
                 <div className={style.heading}>
-                    <h2>Book an Appointment</h2>
+                    <h1>Book an Appointment</h1>
                     <hr className={style.formHr} />
                 </div>
                 <form className={style.form}>

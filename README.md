@@ -26,7 +26,7 @@ npm run dev
 ```
 
 ## Motivation
-We were tasked with building a website for a small business. We wanted to help some friends out, as well as gain some real world, applicable experience.
+We were tasked with building a website for a small business. We wanted to help them simplify their estimate appointment scheduling as well as advertise their services. This will also help people find their company easier.
 
 
 ## Authors

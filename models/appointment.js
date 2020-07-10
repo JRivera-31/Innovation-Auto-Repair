@@ -17,24 +17,16 @@ const AppointmentSchema = new Schema({
         type: Date,
         required: "Date is required!"
     },
-    availableTimes: {
-        type: Array,
-    },
-    isAvailable: {
-        type: Boolean,
-        default: true,
-        required: true
-    }
+    availableTimes: [{ day: Number, times:{ time: String, isAvailable: { type: Boolean} }}]
 })
 
 class newAppointment {
-    constructor({ id, name, email, date, availableTimes, isAvailable }) {
+    constructor({ id, name, email, date, availableTimes}) {
         this.id = id
         this.name = name
         this.email = email
         this.date = date
         this.availableTimes = availableTimes
-        this.isAvailable = isAvailable
     }
 }
 

@@ -7,3 +7,7 @@
 .contentwrap {
     flex: 1;
 }
+
+.background {
+    margin-top: 25vh;
+}

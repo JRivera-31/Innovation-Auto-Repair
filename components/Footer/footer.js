@@ -2,6 +2,7 @@ import styles from "./footer.module.css"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Link from 'next/link'
 
 export default function Foooter() {
     return (
@@ -41,7 +42,7 @@ export default function Foooter() {
                 <Row>
                     <Col>
                         <p className={styles.footer}>
-                            &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | Employee Login 
+                            &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | <Link href="/employee"><a className={styles.employee}>Employee Login</a></Link> 
                         </p>
                     </Col>
                 </Row>        

@@ -9,6 +9,10 @@ router.get("/appointments", (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.post("/appointments", (req, res) => {
+    console.log(req.body)
+})
+
 // router.get('/times/:date', (req, res) => {
 //     db.Appointments.find({date: req.params.date}, (times) => {
 //         if(times === null) {

@@ -11,7 +11,8 @@ let appointmentSeeds = [
         email: "test@test.com",
         phonenumer: "555 555 5555",
         description: "dfasfasfasdf",
-        dateAndTime: "7/11/20 9:30"
+        date: "7/11/20",
+        time: "5:00"
     }
 ]
 

@@ -1,15 +1,19 @@
 import DatePicker from 'react-datepicker';
-import { useState } from 'react';
-import setHours from 'date-fns/setHours'
-import setMinutes from 'date-fns/setMinutes';
-import getDay from 'date-fns/getDay';
+import { useState, useEffect } from 'react';
 import '../BookingForm/form.module.css';
 import API from "../../pages/api/API"
+import { addDays, setHours, setMinutes, getDay, format } from 'date-fns';
 
-const datePicker = () => {
+const datePicker = (props) => {
     const [startDate, setStartDate] = useState(
       setHours(setMinutes(new Date(), 30), 16)
     );
+
+    const handleDateChange = (date) => {
+      let newdate = format(date, 'MM dd yyyy HHmm')
+      setStartDate(date);
+      props.setParentDateState(newdate);
+    }
 
     const isWeekday = date => {
       const day = getDay(date);
@@ -22,10 +26,14 @@ const datePicker = () => {
       })
     }
 
+    useEffect(() => {
+      console.log('asdf');
+    }, [startDate])
+
     return (
       <DatePicker
         selected={startDate}
-        onChange={date => setStartDate(date)}
+        onChange={date => handleDateChange(date)}
         showTimeSelect
         filterDate={isWeekday}
         excludeTimes={[
@@ -33,6 +41,8 @@ const datePicker = () => {
           setHours(setMinutes(new Date(), 30), 12),
           setHours(setMinutes(new Date(), 0), 13)
         ]}
+        minDate={new Date()}
+        maxDate={addDays(new Date(), 30)}
         minTime={setHours(setMinutes(new Date(), 0), 9)}
         maxTime={setHours(setMinutes(new Date(), 0), 17)}
         dateFormat="MMMM d, yyyy h:mm aa"

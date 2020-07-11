@@ -9,11 +9,14 @@ const datePicker = (props) => {
       setHours(setMinutes(new Date(), 30), 16)
     );
 
-    const excludedTimesArr = [
+    
+    let excludedTimesArr = [
       setHours(setMinutes(new Date(), 0), 12),
       setHours(setMinutes(new Date(), 30), 12),
       setHours(setMinutes(new Date(), 0), 13)
     ]
+
+    const [stateExcludedTimes, setExcluded] = useState(excludedTimesArr);
 
     const handleDateChange = (date) => {
       let newdate = format(date, 'MM dd yyyy HH mm')
@@ -29,12 +32,29 @@ const datePicker = (props) => {
     const filterData = () => {
       API.getAppointmentData().then(res => {
         let newDate = format(startDate, 'MM dd yyyy HH mm');
-        console.log(newDate);
+        let newDate2 = newDate.slice(0, 10);
+        let newTime = newDate.slice(11, 16);
+
+        res.data.forEach(item => {
+          if(item.date === newDate2) {
+            console.log(item);
+            
+            excludedTimesArr.push(setHours(setMinutes(startDate, 0), 11));
+            setExcluded(excludedTimesArr);
+          }
+        })
       })
     }
 
     useEffect(() => {
+      excludedTimesArr = [
+        setHours(setMinutes(new Date(), 0), 12),
+        setHours(setMinutes(new Date(), 30), 12),
+        setHours(setMinutes(new Date(), 0), 13)
+      ]
+      setExcluded(excludedTimesArr);
       filterData();
+      console.log(excludedTimesArr);
     }, [startDate])
 
     return (
@@ -43,7 +63,7 @@ const datePicker = (props) => {
         onChange={date => handleDateChange(date)}
         showTimeSelect
         filterDate={isWeekday}
-        excludeTimes={excludedTimesArr}
+        excludeTimes={stateExcludedTimes}
         minDate={new Date()}
         maxDate={addDays(new Date(), 30)}
         minTime={setHours(setMinutes(new Date(), 0), 9)}

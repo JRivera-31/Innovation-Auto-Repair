@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import headerStyles from "./header.module.css";
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
@@ -125,7 +124,7 @@ function Header() {
             <a>
               <li>
               <Link href="/booking">
-                <a>Book With Us</a>
+                <a>Book Appointment</a>
               </Link>
               </li>
             </a>
@@ -143,7 +142,7 @@ function Header() {
           </li>
           <li className={headerStyles.navItem}>
             <Link href="/booking">
-              <a className={headerStyles.navLink}>Book With Us</a>
+              <a className={headerStyles.navLink}>Book Appointment</a>
             </Link>
           </li>
         </ul>

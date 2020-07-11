@@ -11,7 +11,8 @@ let appointmentSeeds = [
         email: "test@test.com",
         phonenumer: "555 555 5555",
         description: "dfasfasfasdf",
-        dateAndTime: "7/11/20 9:30"
+        date: "7/11/20",
+        time: "5:00"
     }
 ]
 
@@ -19,7 +20,7 @@ let appointmentSeeds = [
 db.Appointments.deleteMany({})
     .then(() => db.Appointments.collection.insertMany(appointmentSeeds))
     .then(data => {
-        console.log(data.result.n + "seeds entered")
+        console.log(data.result.n + " seeds entered")
         process.exit(0)
     })
     .catch(err => {

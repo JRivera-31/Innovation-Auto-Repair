@@ -9,6 +9,15 @@ router.get("/appointments", (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.post("/appointments", (req, res) => {
+    console.log(req.body)
+    let { name, email, phonenumber, description, date, time } = req.body 
+
+    db.Appointments.create({ name, email, phonenumber, description, date, time })
+        .then(newAppointment => res.json(newAppointment))
+        .catch(err => console.log(err))
+})
+
 // router.get('/times/:date', (req, res) => {
 //     db.Appointments.find({date: req.params.date}, (times) => {
 //         if(times === null) {

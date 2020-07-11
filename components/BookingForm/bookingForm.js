@@ -50,7 +50,7 @@ export default class BookingForm extends React.Component {
         for(let i = 0; i < 3; i++) {
             dateSelect.push(dateArr[i]);
         }
-        let timeSelect = dateArr[3];
+        let timeSelect = dateArr[3] + ' ' + dateArr[4];
         this.setState({ selectedTime: timeSelect });
         this.setState({ selectedDate: dateSelect.join(' ') });
     }

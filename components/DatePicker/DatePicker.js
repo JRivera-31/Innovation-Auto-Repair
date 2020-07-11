@@ -9,8 +9,14 @@ const datePicker = (props) => {
       setHours(setMinutes(new Date(), 30), 16)
     );
 
+    const excludedTimesArr = [
+      setHours(setMinutes(new Date(), 0), 12),
+      setHours(setMinutes(new Date(), 30), 12),
+      setHours(setMinutes(new Date(), 0), 13)
+    ]
+
     const handleDateChange = (date) => {
-      let newdate = format(date, 'MM dd yyyy HHmm')
+      let newdate = format(date, 'MM dd yyyy HH mm')
       setStartDate(date);
       props.setParentDateState(newdate);
     }
@@ -20,14 +26,15 @@ const datePicker = (props) => {
       return day !== 0 && day !== 6;
     };
   
-    const getData = () => {
+    const filterData = () => {
       API.getAppointmentData().then(res => {
-        console.log(res.data)
+        let newDate = format(startDate, 'MM dd yyyy HH mm');
+        console.log(newDate);
       })
     }
 
     useEffect(() => {
-      console.log('asdf');
+      filterData();
     }, [startDate])
 
     return (
@@ -36,11 +43,7 @@ const datePicker = (props) => {
         onChange={date => handleDateChange(date)}
         showTimeSelect
         filterDate={isWeekday}
-        excludeTimes={[
-          setHours(setMinutes(new Date(), 0), 12),
-          setHours(setMinutes(new Date(), 30), 12),
-          setHours(setMinutes(new Date(), 0), 13)
-        ]}
+        excludeTimes={excludedTimesArr}
         minDate={new Date()}
         maxDate={addDays(new Date(), 30)}
         minTime={setHours(setMinutes(new Date(), 0), 9)}

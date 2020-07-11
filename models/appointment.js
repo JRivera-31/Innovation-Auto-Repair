@@ -23,20 +23,25 @@ const AppointmentSchema = new Schema({
         trim: true,
         maxlength: 300
     },
-    dateAndTime: {
+    date: {
         type: String,
-        required: "Must include a date and time!"
+        required: "Must include a date!"
+    },
+    time: {
+        type: String, 
+        required: "Must include a time"
     }
 })
 
 class newAppointment {
-    constructor({ id, name, email, phonenumber, description, date}) {
+    constructor({ id, name, email, phonenumber, description, date, time}) {
         this.id = id
         this.name = name
         this.email = email
         this.phonenumber = phonenumber
         this.description = description
         this.date = date
+        this.time = time
     }
 }
 

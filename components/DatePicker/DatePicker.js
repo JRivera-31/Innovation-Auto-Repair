@@ -9,18 +9,23 @@ const datePicker = (props) => {
       setHours(setMinutes(new Date(), 30), 16)
     );
 
-    
+    //Array of times to be excluded (by default, lunch time)
     let excludedTimesArr = [
       setHours(setMinutes(new Date(), 0), 12),
       setHours(setMinutes(new Date(), 30), 12),
       setHours(setMinutes(new Date(), 0), 13)
     ]
 
+    //Crates a state for the excluded times array
     const [stateExcludedTimes, setExcluded] = useState(excludedTimesArr);
 
+    //When the date changes on the cal
     const handleDateChange = (date) => {
-      let newdate = format(date, 'MM dd yyyy HH mm')
+      //Format the date
+      let newdate = format(date, 'MM dd yyyy HH mm');
+      //Set the start date on the change
       setStartDate(date);
+      //Pass the newdate with the better formatting to the parent component
       props.setParentDateState(newdate);
     }
 
@@ -29,32 +34,38 @@ const datePicker = (props) => {
       return day !== 0 && day !== 6;
     };
   
+    //Filters the times
     const filterData = () => {
+      //Grabs all of the made appointments
       API.getAppointmentData().then(res => {
+        //Formats the state date into a usable form
         let newDate = format(startDate, 'MM dd yyyy HH mm');
+        //Just the mm dd yyyy
         let newDate2 = newDate.slice(0, 10);
-        let newTime = newDate.slice(11, 16);
-
+        //Go through every item
         res.data.forEach(item => {
+          //If the appointment date matches the selected date
           if(item.date === newDate2) {
-            console.log(item);
-            
-            excludedTimesArr.push(setHours(setMinutes(startDate, 0), 11));
+            //Black out the time slot
+            excludedTimesArr.push(setHours(setMinutes(startDate, parseInt(item.time.split(' ')[1])), parseInt(item.time.split(' ')[0])));
             setExcluded(excludedTimesArr);
           }
         })
       })
     }
 
+    //Every time the startdate loads/updates
     useEffect(() => {
+      //Reset the excluded array
       excludedTimesArr = [
         setHours(setMinutes(new Date(), 0), 12),
         setHours(setMinutes(new Date(), 30), 12),
         setHours(setMinutes(new Date(), 0), 13)
       ]
+      //Set it
       setExcluded(excludedTimesArr);
+      //Call the filter
       filterData();
-      console.log(excludedTimesArr);
     }, [startDate])
 
     return (

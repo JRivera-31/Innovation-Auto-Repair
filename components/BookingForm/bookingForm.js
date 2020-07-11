@@ -18,12 +18,12 @@ export default class BookingForm extends React.Component {
         };
     }
 
+    //When you submit the form, pass the state key/value pairs into the api function
     handleFormSubmit = (e) => {
-        API.createAppointment(this.state.name, this.state.emailAddress, this.state.phoneNumber, this.state.description, this.state.selectedDate, this.state.selectedTime).then((result) => {
+        API.createAppointment(this.state.name, this.state.emailAddress, this.state.phoneNumber, this.state.description, this.state.selectedDate, this.state.selectedTime).then(() => {
             console.log('appointment made');
         })
-
-
+        //Reset the character counter to 0
         this.setState({ messageLength: 0 });
     }
 
@@ -44,13 +44,19 @@ export default class BookingForm extends React.Component {
         this.setState({ messageLength: e.target.value.length })
     }
 
+    //Takes in the date passed by the child compononet
     setParentDateState = (date) => {
+        //Split it into an array
         let dateArr = date.split(' ');
+        //Holder
         let dateSelect = [];
+        //Add the first 3 indexes to the holder
         for(let i = 0; i < 3; i++) {
             dateSelect.push(dateArr[i]);
         }
+        //Hold the last two in another holder
         let timeSelect = dateArr[3] + ' ' + dateArr[4];
+        //Set the respective state
         this.setState({ selectedTime: timeSelect });
         this.setState({ selectedDate: dateSelect.join(' ') });
     }

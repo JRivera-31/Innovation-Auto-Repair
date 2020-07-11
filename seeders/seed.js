@@ -19,7 +19,7 @@ let appointmentSeeds = [
         email: "test3@test.com",
         phonenumer: "565 555 5555",
         description: "dfasfasfasdf",
-        date: "07 12 2020",
+        date: "07 15 2020",
         time: "17 00"
     }
 ]

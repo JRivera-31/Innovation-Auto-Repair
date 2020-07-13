@@ -4,7 +4,6 @@ import BookingDetails from '../components/BookingDetails/details';
 import Header from '../components/Header/Header';
 import BookingForm from '../components/BookingForm/bookingForm';
 import Footer from '../components/Footer/footer';
-import API from "./api/API"
 
 export default function Booking() {
   return (

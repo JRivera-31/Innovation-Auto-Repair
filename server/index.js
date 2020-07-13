@@ -20,7 +20,8 @@ app.prepare().then(() => {
   const server = express()
   server.use(bodyParser.json())
   server.use(bodyParser.urlencoded({extended: true}))
-  server.use("/api", require("./routes/index"))
+  server.use("/api", require("./routes/appointment-routes"))
+  server.use("/user", require("./routes/auth-routes"))
 
   server.all('*', (req, res) => {
     return handle(req, res)

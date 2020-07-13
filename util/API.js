@@ -15,6 +15,10 @@ const API = {
 
   createBlockout: () => {
     return axios.post('/api/blockouts', { date });
+  },
+
+  deleteBlockout: () => {
+    return axios.delete('/api/blockouts', { date });
   }
 }
 

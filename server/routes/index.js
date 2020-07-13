@@ -17,6 +17,11 @@ router.post("/appointments", (req, res) => {
         .catch(err => console.log(err))
 })
 
+router.delete('/appointments', (req, res) => {
+    db.Appointments.deleteOne({ _id: req.body.id })
+        .then(result => res.json(result))
+        .catch(err => console.log(err));
+})
 
 router.get('/blockouts', (req, res) => {
     db.Blockout.find({})
@@ -29,8 +34,17 @@ router.get('/blockouts', (req, res) => {
 })
 
 router.post('/blockouts', (req, res) => {
+    let { date } = req.body;
     db.Blockout.create({ date })
         .then(newBlockout => res.json(newBlockout))
+        .catch(err => console.log(err));
+})
+
+router.delete('/blockouts', (req, res) => {
+    db.Blockout.deleteOne({ _id: req.body.id })
+        .then(result => {
+            res.json(result)
+        })
         .catch(err => console.log(err));
 })
 

@@ -4,15 +4,8 @@ import BookingDetails from '../components/BookingDetails/details';
 import Header from '../components/Header/Header';
 import BookingForm from '../components/BookingForm/bookingForm';
 import Footer from '../components/Footer/footer';
-import API from "./api/API"
 
 export default function Booking() {
-  const getData = () => {
-    API.getAppointmentData().then(res => {
-      console.log(res.data[0].dateAndTime)
-    })
-  }
-
   return (
     <div>
       <Head>

@@ -73,8 +73,13 @@
         width: 75%;
     }
 
+    .formTextArea {
+        padding: 1.25em;
+    }
+
     .bookingSubmit {
         width: 40%;
+        padding: 1.25em 0;
     }
 }
 

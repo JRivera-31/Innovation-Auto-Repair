@@ -10,7 +10,6 @@ router.get("/appointments", (req, res) => {
 })
 
 router.post("/appointments", (req, res) => {
-    console.log(req.body)
     let { name, email, phonenumber, description, date, time } = req.body 
 
     db.Appointments.create({ name, email, phonenumber, description, date, time })
@@ -18,19 +17,21 @@ router.post("/appointments", (req, res) => {
         .catch(err => console.log(err))
 })
 
-// router.get('/times/:date', (req, res) => {
-//     db.Appointments.find({date: req.params.date}, (times) => {
-//         if(times === null) {
-//             //All times available (9-5)
-//         } else {
-//             let availableTimes = times.map(time => {
-//                 if(available) {
-//                     return time;
-//                 }
-//             })
-//             return availableTimes;
-//         }
-//     })
-// })
+
+router.get('/blockouts', (req, res) => {
+    db.Blockout.find({})
+        .then(blockouts => {
+            res.json(blockouts);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+})
+
+router.post('/blockouts', (req, res) => {
+    db.Blockout.create({ date })
+        .then(newBlockout => res.json(newBlockout))
+        .catch(err => console.log(err));
+})
 
 module.exports = router

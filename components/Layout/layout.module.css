@@ -1,0 +1,15 @@
+.backToHome {
+    padding: 2em;
+    background-color: var(--main-red);
+}
+
+.backToHome > a {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: white;
+}
+
+.backToHome > a:hover {
+    color: white;
+    text-decoration: none;
+}
+

@@ -30,6 +30,7 @@ export default function Booking() {
       <div className={utilStyles.pagecontainer}>
         <BookingDetails />
         <BookingForm />
+        <Footer />
       </div>
     </div>
   )

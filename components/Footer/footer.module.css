@@ -18,6 +18,9 @@
     font-size: 1rem;
     text-align: center;
 }
+.mainfooter a {
+    color: #fff;
+}
 .employee:hover {
     cursor: pointer;
 }

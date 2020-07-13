@@ -19,7 +19,7 @@ export default function Layout({ children, employee }) {
                 <link
                     rel="shortcut icon"
                     type="img/png"
-                    href="../public/images/Innovation_Logo-no-bg.png"
+                    href="/images/Innovation_Logo-no-bg.png"
                 />
             </Head>
             {!employee ? (

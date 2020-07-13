@@ -24,6 +24,14 @@ let appointmentSeeds = [
     }
 ]
 
+let blockoutSeeds = [
+    {
+        date: '07 17 2020'
+    },
+    {
+        date: '07 23 2020'
+    }
+]
 
 db.Appointments.deleteMany({})
     .then(() => db.Appointments.collection.insertMany(appointmentSeeds))
@@ -35,3 +43,16 @@ db.Appointments.deleteMany({})
         console.log(err)
         process.exit(1)
     })    
+
+db.Blockout.deleteMany({})
+    .then(() => {
+        db.Blockout.collection.insertMany(blockoutSeeds)
+            .then(data => {
+                console.log(data);
+                process.exit(0);
+            })
+            .catch(err => {
+                console.log(err);
+                process.exit(1);
+            })
+    })

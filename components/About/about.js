@@ -20,7 +20,7 @@ export default function About() {
                     </p>
                     <p className={styles.boldText}>
                         <a className={styles.anchor} href='#contact-section'>
-                        Please contact us with any questions or concerns.
+                            Please contact us with any questions or concerns.
                         </a>
                     </p>
                 </div>

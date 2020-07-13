@@ -7,12 +7,6 @@ import Footer from '../components/Footer/footer';
 import API from "./api/API"
 
 export default function Booking() {
-  const getData = () => {
-    API.getAppointmentData().then(res => {
-      console.log(res.data[0].dateAndTime)
-    })
-  }
-
   return (
     <div>
       <Head>

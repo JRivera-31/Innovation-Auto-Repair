@@ -24,7 +24,7 @@ export default function Home() {
         <link
           rel="shortcut icon"
           type="img/png"
-          href="../public/images/Innovation_Logo-no-bg.png"
+          href="/images/Innovation_Logo-no-bg.png"
         />
       </Head>
         <div className={utilStyles.pagecontainer}>

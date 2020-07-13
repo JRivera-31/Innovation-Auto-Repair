@@ -3,6 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    margin-bottom: 200px;
 }
 
 .heading {

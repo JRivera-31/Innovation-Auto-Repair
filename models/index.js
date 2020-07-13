@@ -1,4 +1,5 @@
 module.exports = {
     // Users: require("./user"),
-    Appointments: require("./appointment")
+    Appointments: require("./appointment"),
+    Blockout: require('./blockout')
 }

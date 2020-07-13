@@ -1,6 +1,6 @@
 import style from './form.module.css';
 import DatePicker from '../DatePicker/DatePicker';
-import API from '../../pages/api/API'
+import API from "../../util/API"
 
 export default class BookingForm extends React.Component {
 

@@ -36,6 +36,7 @@ export default function Foooter() {
                             <li>(970) 539-8184 - Manager</li>
                             <li><a href="mailto:innovation.pdr@gmail.com">innovation.pdr@gmail.com</a></li>
                             <li>Si Habla Español</li>
+                            <li><a href="https://www.facebook.com/innovation.PDR/">Check us out on Facebook!</a></li>
                         </ul>
                     </Col>
                 </Row>

@@ -15,5 +15,5 @@ export default function Form() {
         <button className={styles.formSubmit} type="submit">Submit</button>
       </form>
     </div>
-  )
-}
+  );
+};

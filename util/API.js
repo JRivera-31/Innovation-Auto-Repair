@@ -7,6 +7,18 @@ const API = {
 
   createAppointment: (name, email, phonenumber, description, date, time) => {
     return axios.post("/api/appointments", {name, email, phonenumber, description, date, time})
+  },
+
+  getBlockoutData: () => {
+    return axios.get('/api/blockouts');
+  },
+
+  createBlockout: () => {
+    return axios.post('/api/blockouts', { date });
+  },
+
+  deleteBlockout: () => {
+    return axios.delete('/api/blockouts', { date });
   }
 }
 

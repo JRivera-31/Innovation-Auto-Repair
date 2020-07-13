@@ -49,7 +49,9 @@
 .carouselContainer {
     width: 50%;
     margin: auto;
+    background: #000;
 }
+
 
 @media screen and (min-width: 1024px) {
     .text {

@@ -38,6 +38,7 @@ export default function About() {
                 className="d-block w-100"
                 src="https://via.placeholder.com/125"
                 alt="First slide"
+                height={400}
               />
               <Carousel.Caption>
                 <h3>First slide label</h3>
@@ -51,6 +52,7 @@ export default function About() {
                 className="d-block w-100"
                 src="https://via.placeholder.com/125"
                 alt="Second slide"
+                height={400}
               />
 
               <Carousel.Caption>
@@ -63,6 +65,7 @@ export default function About() {
                 className="d-block w-100"
                 src="https://via.placeholder.com/125"
                 alt="Third slide"
+                height={400}
               />
 
               <Carousel.Caption>
@@ -70,6 +73,20 @@ export default function About() {
                 <p>
                   Praesent commodo cursus magna, vel scelerisque nisl
                   consectetur.
+                </p>
+              </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+              <img
+                className="d-block w-100"
+                src="https://via.placeholder.com/125"
+                alt="Fourth slide"
+                height={400}
+              />
+              <Carousel.Caption>
+                <h3>Fourth slide label</h3>
+                <p>
+                  Loremmmm
                 </p>
               </Carousel.Caption>
             </Carousel.Item>

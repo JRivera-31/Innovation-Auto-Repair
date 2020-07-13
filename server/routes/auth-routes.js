@@ -10,6 +10,28 @@ router.post("/register", (req, res) => {
         .catch(err => res.status(401).json(err))
 })
 
-router.get("/")
+router.post("/login", (req, res) => {
+    const { username, password } = req.body
+    
+    db.User.findOne({ username: username, password: password })
+        .then(user => {
+            req.session.user = user
+            return res.status(200).json(user)
+        })
+        .catch(err => res.status(404).json(err))
+})
+
+router.get("/dashboard", (req, res) => {
+    if (!req.session.user) {
+        return res.status(401).send()
+    }
+
+    return res.status(200).send("Welcome!")
+})
+
+router.get("/logout", (req, res) => {
+    req.session.destroy()
+    return res.status(200).send()
+})
 
 module.exports = router

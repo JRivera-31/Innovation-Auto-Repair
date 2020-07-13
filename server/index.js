@@ -8,6 +8,7 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 const bodyParser = require("body-parser")
+const session = require("express-session")
 
 // Mongoose setup
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/InnovationAutoRepair", {
@@ -21,6 +22,7 @@ app.prepare().then(() => {
   server.use(bodyParser.json())
   server.use(bodyParser.urlencoded({extended: true}))
   server.use("/api", require("./routes/appointment-routes"))
+  server.use(session({secret: process.env.SESSIONSECRET, resave: false, saveUninitialized: true}))
   server.use("/user", require("./routes/auth-routes"))
 
   server.all('*', (req, res) => {

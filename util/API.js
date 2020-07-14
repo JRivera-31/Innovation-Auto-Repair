@@ -13,6 +13,10 @@ const API = {
     return axios.delete(`/api/appointments/${id}`);
   },
 
+  getLastAppointment: () => {
+    return axios.get("/api/lastappointment")
+  },
+
   getBlockoutData: () => {
     return axios.get('/api/blockouts');
   },

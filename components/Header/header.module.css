@@ -85,19 +85,6 @@
   text-decoration: none;
 }
 
-/* had to add this to handle the last li in the main navbar */
-.navigation li > a{
-  font-family: 'Source Sans Pro', sans-serif;
-  display: table-cell;
-  vertical-align: middle;
-  height: 100%;
-  color: white;
-  font-size: 20px;
-  transition: .3s ease-in-out;
-  opacity: 0.8;
-  text-decoration: none;
-}
-
 .navigation li:hover {
   transition: .3s ease-in-out;
   transform: scale(1.05);

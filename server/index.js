@@ -25,6 +25,12 @@ app.prepare().then(() => {
   server.use(session({secret: process.env.SESSIONSECRET, resave: false, saveUninitialized: true}))
   server.use("/user", require("./routes/auth-routes"))
 
+  server.get("/dashboard", (req, res) => {
+    if (!req.user) {
+      res.redirect("/login")
+    }
+  })
+
   server.all('*', (req, res) => {
     return handle(req, res)
   })

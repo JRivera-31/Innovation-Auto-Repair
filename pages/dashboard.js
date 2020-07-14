@@ -6,7 +6,7 @@ export default function Dashboard() {
   return (
     <div>
       <Head>
-        <title>Book an Appointment</title>
+        <title>Dashboard</title>
         <link
                     rel="shortcut icon"
                     type="img/png"

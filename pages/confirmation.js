@@ -1,8 +1,9 @@
 import Head from 'next/head';
-import confirmationPage from '../components/Confirmation/confirmationPage'
+import ConfirmationPage from '../components/Confirmation/ConfirmationPage'
 
-export default function Dashboard() {
-    <div>
+export default function Confirmation() {
+    return (
+<div>
         <Head>
         <title>Confirmation</title>
         <link
@@ -11,6 +12,8 @@ export default function Dashboard() {
                     href="/images/Innovation_Logo-no-bg.png"
                 />
       </Head>
-      <confirmationPage/>
+      < ConfirmationPage />
     </div>
+    )
+    
 }

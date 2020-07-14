@@ -1,14 +1,15 @@
 // Dependencies
 const express = require('express')
 const next = require('next')
+const url = require('url')
 const mongoose = require("mongoose")
+const bodyParser = require("body-parser")
+const session = require("express-session")
 
 const port = process.env.PORT || 3000
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-const bodyParser = require("body-parser")
-const session = require("express-session")
 
 // Mongoose setup
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/InnovationAutoRepair", {
@@ -19,6 +20,7 @@ mongoose.connection.on("error", err => console.log(`Mongoose connection err:\n${
 
 app.prepare().then(() => {
   const server = express()
+ 
   server.use(bodyParser.json())
   server.use(bodyParser.urlencoded({extended: true}))
   server.use("/api", require("./routes/appointment-routes"))
@@ -31,8 +33,9 @@ app.prepare().then(() => {
   //   }
   // })
 
-  server.all('*', (req, res) => {
-    return handle(req, res)
+  server.get('*', (req, res) => {
+    const parsedUrl = url.parse(req.url, true)
+    return handle(req, res, parsedUrl)
   })
 
   server.listen(port, (err) => {

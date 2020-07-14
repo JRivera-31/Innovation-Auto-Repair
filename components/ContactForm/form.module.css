@@ -6,7 +6,7 @@
 }
 
 .heading {
-    padding: 3em 0 1.5em 0;
+    padding: 4em 0 3em 0;
     font-family: 'Chau Philomene One';
     text-align: center;
 }
@@ -76,7 +76,7 @@
 
 @media screen and (min-width: 1024px) {
     .heading {
-        padding: 4em 0 3em 0;
+        padding: 4em 0 2em 0;
     }
 
     .formHr {

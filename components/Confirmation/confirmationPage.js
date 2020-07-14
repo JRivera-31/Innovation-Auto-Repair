@@ -4,6 +4,7 @@ export default function ConfirmationPage() {
     return (
       <div className={style.confirmationContainer}>
         <h1>Appointment Booked!</h1>
+        <div className={style.confirmationHr}></div>
         <p>Thank you for booking an appointment with us!</p>
         <div className={style.details}>
         <p>Confirmation Number: </p>

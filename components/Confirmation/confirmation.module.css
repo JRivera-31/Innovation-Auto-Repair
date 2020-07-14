@@ -7,6 +7,12 @@
     color: #000;
     border: 2px solid #000;
 }
+.confirmationHr {
+    margin: 0 auto;
+    width: 15%;
+    border: 1px solid rgb(161, 11, 11);
+    margin-bottom: 10px;
+}
 .confirmationContainer a {
     color: #000;
 }

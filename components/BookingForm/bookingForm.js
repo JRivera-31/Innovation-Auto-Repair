@@ -22,6 +22,7 @@ export default class BookingForm extends React.Component {
     handleFormSubmit = (e) => {
         API.createAppointment(this.state.name, this.state.emailAddress, this.state.phoneNumber, this.state.description, this.state.selectedDate, this.state.selectedTime).then(() => {
             console.log('appointment made');
+            window.location.replace("/confirmation")
         })
         //Reset the character counter to 0
         this.setState({ messageLength: 0 });

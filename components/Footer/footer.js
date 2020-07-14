@@ -43,7 +43,7 @@ export default function Foooter() {
                 <Row>
                     <Col>
                         <p className={styles.footer}>
-                            &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | <Link href="/employee"><a className={styles.employee}>Employee Login</a></Link> 
+                            &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | <Link href="/login"><a className={styles.employee}>Employee Login</a></Link> 
                         </p>
                     </Col>
                 </Row>        

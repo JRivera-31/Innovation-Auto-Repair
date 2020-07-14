@@ -1,4 +1,5 @@
 import DashboardTable from '../components/DashboardTable/DashboardTable'
+import BlockoutTable from '../components/BlockoutTable/BlockoutTable'
 import Head from 'next/head';
 
 export default function Dashboard() {
@@ -13,6 +14,7 @@ export default function Dashboard() {
                 />
       </Head>
     <DashboardTable />
+    <BlockoutTable />
     </div>
   );
 }

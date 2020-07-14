@@ -36,13 +36,14 @@ export default function Foooter() {
                             <li>(970) 539-8184 - Manager</li>
                             <li><a href="mailto:innovation.pdr@gmail.com">innovation.pdr@gmail.com</a></li>
                             <li>Si Habla Español</li>
+                            <li><a href="https://www.facebook.com/innovation.PDR/" target="_blank">Check us out on Facebook!</a></li>
                         </ul>
                     </Col>
                 </Row>
                 <Row>
                     <Col>
                         <p className={styles.footer}>
-                            &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | <Link href="/employee"><a className={styles.employee}>Employee Login</a></Link> 
+                            &copy;2020 Innovation Auto Hail Repair | All Rights reveserved | <Link href="/login"><a className={styles.employee}>Employee Login</a></Link> 
                         </p>
                     </Col>
                 </Row>        

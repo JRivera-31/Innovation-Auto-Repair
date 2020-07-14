@@ -9,6 +9,10 @@ const API = {
     return axios.post("/api/appointments", {name, email, phonenumber, description, date, time})
   },
 
+  deleteAppointment: (id) => {
+    return axios.delete(`/api/appointments/${id}`);
+  },
+
   getBlockoutData: () => {
     return axios.get('/api/blockouts');
   },
@@ -17,8 +21,8 @@ const API = {
     return axios.post('/api/blockouts', { date });
   },
 
-  deleteBlockout: () => {
-    return axios.delete('/api/blockouts', { date });
+  deleteBlockout: (id) => {
+    return axios.delete(`/api/blockouts/${id}`);
   },
 
   login: (username, password) => {

@@ -9,10 +9,11 @@ router.get("/appointments", (req, res) => {
     .catch(err => res.status(404).json(err))
 })
 
-router.get("/appointments", (req, res) => {
-    db.Appointments.find({}).then(appointments => {
-
+router.get("/lastappointment", (req, res) => {
+    db.Appointments.find({}).sort({$natural: -1}).limit(1).then(appointment => {
+        res.status(200).json(appointment)
     })
+    .catch(err => res.status(404).json(err))
 })
 
 router.post("/appointments", (req, res) => {

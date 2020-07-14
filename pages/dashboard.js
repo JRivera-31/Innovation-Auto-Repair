@@ -1,16 +1,18 @@
-import Layout from '../components/Layout/layout';
+import DashboardTable from '../components/DashboardTable/DashboardTable'
 import Head from 'next/head';
 
 export default function Dashboard() {
   return (
-    <Layout>
+    <div>
       <Head>
-      <title>Dashboard</title>
-        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk' crossOrigin="anonymous"></link>
+        <title>Book an Appointment</title>
+        <link
+                    rel="shortcut icon"
+                    type="img/png"
+                    href="/images/Innovation_Logo-no-bg.png"
+                />
       </Head>
-      <div className="w-75">
-        
-      </div>
-    </Layout>
+    <DashboardTable />
+    </div>
   );
 }

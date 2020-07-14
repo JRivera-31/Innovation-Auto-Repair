@@ -11,8 +11,7 @@ const bodyParser = require("body-parser")
 const session = require("express-session")
 
 // Mongoose setup
-mongoose.connect(process.env.MONGODB_URI || "mongodb://user1:password1@ds243501.mlab.com:43501/heroku_rb0kcmzp" || 
-  "localhost:27017/InnovationAutoRepair", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/InnovationAutoRepair", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })

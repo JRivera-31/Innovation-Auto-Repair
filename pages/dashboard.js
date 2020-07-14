@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import DashboardTable from '../components/DashboardTable/DashboardTable';
+import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
 import EmployeeLogoutBtn from '../components/EmployeeLogoutButton/logoutBtn';
 
 export default function Dashboard() {
@@ -15,6 +16,8 @@ export default function Dashboard() {
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"></link>
       </Head>
       <DashboardTable />
+      <DashboardTable />
+      <BlockoutTable />
       <EmployeeLogoutBtn />
     </div>
   );

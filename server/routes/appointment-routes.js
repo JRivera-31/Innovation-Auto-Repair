@@ -17,8 +17,8 @@ router.post("/appointments", (req, res) => {
         .catch(err => console.log(err))
 })
 
-router.delete('/appointments', (req, res) => {
-    db.Appointments.deleteOne({ _id: req.body.id })
+router.delete('/appointments/:id', (req, res) => {
+    db.Appointments.deleteOne({ _id: req.params.id })
         .then(result => res.json(result))
         .catch(err => console.log(err));
 })
@@ -40,8 +40,8 @@ router.post('/blockouts', (req, res) => {
         .catch(err => console.log(err));
 })
 
-router.delete('/blockouts', (req, res) => {
-    db.Blockout.deleteOne({ _id: req.body.id })
+router.delete('/blockouts/:id', (req, res) => {
+    db.Blockout.deleteOne({ _id: req.params.id })
         .then(result => {
             res.json(result)
         })

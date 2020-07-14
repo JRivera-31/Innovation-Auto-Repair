@@ -23,10 +23,8 @@ export default function About() {
             We give special discounts for those paying out of pocket.
           </p>
           <p>Have a non-hail related dent? We fix those too!</p>
-          <p className={styles.boldText}>
-            <a className={styles.anchor} href="#contact-section">
-              Please contact us with any questions or concerns.
-            </a>
+          <p>
+              Please <span><a className={`${styles.anchor} ${styles.boldText}`} href="#contact-section">contact us</a></span> with any questions or concerns.
           </p>
         </div>
       </div>

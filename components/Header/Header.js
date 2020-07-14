@@ -128,30 +128,39 @@ function Header({ home }) {
                 </a>
               </>
             ) : (
-              <>
-                <a href="/">
-                  <li >Home</li>
-                </a>
-              </>
-            )}
-
+                <>
+                  <a href="/">
+                    <li >Home</li>
+                  </a>
+                </>
+              )}
           </ul>
         </div>
       </div>
 
       <nav className={`${headerStyles.sidebar} ${sidebarChange}`}>
         <ul className={headerStyles.navList}>
-          <li className={headerStyles.navItem}>
-            <a className={headerStyles.navLink} href="#about-section">About</a>
-          </li>
-          <li className={headerStyles.navItem}>
-            <a className={headerStyles.navLink} href="#contact-section">Contact</a>
-          </li>
-          <li className={headerStyles.navItem}>
-            <Link href="/booking">
-              <a className={headerStyles.navLink}>Book Appointment</a>
-            </Link>
-          </li>
+          {home ? (
+            <>
+              <li className={headerStyles.navItem}>
+                <a className={headerStyles.navLink} href="#about-section">About</a>
+              </li>
+              <li className={headerStyles.navItem}>
+                <a className={headerStyles.navLink} href="#contact-section">Contact</a>
+              </li>
+              <li className={headerStyles.navItem}>
+                <Link href="/booking">
+                  <a className={headerStyles.navLink}>Book Appointment</a>
+                </Link>
+              </li>
+            </>
+          ) : (
+              <>
+                <li className={headerStyles.navItem}>
+                <a className={headerStyles.navLink} href="/">Home</a>
+              </li>
+              </>
+            )}
         </ul>
       </nav>
     </div>

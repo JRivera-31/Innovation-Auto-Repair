@@ -12,7 +12,7 @@ export default class Form extends React.Component {
     API.login(this.state.username, this.state.password)
       .then(() => window.location.replace("/dashboard"))
       .catch((err) => {
-        console.log("Username or password is wrong")
+        window.location.reload()
       })
   }
 

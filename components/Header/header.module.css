@@ -5,7 +5,7 @@
   display: block;
   background-color: var(--main-red);
   position: fixed;
-  z-index: 2;
+  z-index: 100;
 }
 
 .topHeader{
@@ -38,6 +38,7 @@
   height: 80px;
   display: block;
   margin: 0 auto;
+  z-index: 500;
 }
 
 .logoContainer{
@@ -141,7 +142,7 @@
   justify-content: center;
   align-items: center;
   transition: right .2s cubic-bezier(1, 0, 0, 1);
-  z-index: 1;
+  z-index: 50;
 }
 
 .change {

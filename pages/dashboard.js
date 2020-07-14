@@ -1,9 +1,10 @@
-import DashboardTable from "../components/DashboardTable/DashboardTable";
-import BlockoutTable from "../components/BlockoutTable/BlockoutTable";
 import Head from "next/head";
 import Router from "next/router";
 import API from "../util/API";
 import { useState, useEffect } from "react";
+import DashboardTable from '../components/DashboardTable/DashboardTable';
+import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
+import EmployeeLogoutBtn from '../components/EmployeeLogoutButton/logoutBtn';
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -32,6 +33,7 @@ export default function Dashboard() {
       </Head>
       {user ? (
         <>
+          <EmployeeLogoutBtn />
           <DashboardTable />
           <BlockoutTable />
         </>

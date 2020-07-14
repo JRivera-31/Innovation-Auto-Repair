@@ -6,7 +6,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import Link from "next/link";
 
-function Header() {
+function Header({ home }) {
   const [isOpen, setIsOpen] = useState(false);
 
   // equivalent to componentDidMount()
@@ -115,19 +115,26 @@ function Header() {
           </div>
 
           <ul className={headerStyles.navigation}>
-            <a href="#about-section">
-              <li >About</li>
-            </a>
-            <a href="#contact-section">
-              <li>Contact</li>
-            </a>
-            <a>
-              <li>
-              <Link href="/booking">
-                <a>Book Appointment</a>
-              </Link>
-              </li>
-            </a>
+            {home ? (
+              <>
+                <a href="#about-section">
+                  <li >About</li>
+                </a>
+                <a href="#contact-section">
+                  <li>Contact</li>
+                </a>
+                <a href='/booking'>
+                  <li>Book Appointment</li>
+                </a>
+              </>
+            ) : (
+              <>
+                <a href="/">
+                  <li >Home</li>
+                </a>
+              </>
+            )}
+
           </ul>
         </div>
       </div>

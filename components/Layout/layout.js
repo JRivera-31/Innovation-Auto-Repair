@@ -4,7 +4,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/footer';
 import styles from './layout.module.css';
 
-export default function Layout({ children, employee }) {
+export default function Layout({ children, employee, home }) {
     return (
         <div>
             <Head>
@@ -24,7 +24,7 @@ export default function Layout({ children, employee }) {
             </Head>
             {!employee ? (
                 <>
-                <Header />
+                <Header home={home}/>
                 <main>{ children }</main>
                 <Footer />
                 </>

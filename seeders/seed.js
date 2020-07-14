@@ -9,7 +9,7 @@ let appointmentSeeds = [
     {
         name: "Test Tester",
         email: "test@test.com",
-        phonenumer: "555 555 5555",
+        phonenumber: "555 555 5555",
         description: "dfasfasfasdf",
         date: "07 13 2020",
         time: "11 00"
@@ -17,7 +17,7 @@ let appointmentSeeds = [
     {
         name: "Second Test",
         email: "test3@test.com",
-        phonenumer: "565 555 5555",
+        phonenumber: "565 555 5555",
         description: "dfasfasfasdf",
         date: "07 15 2020",
         time: "17 00"

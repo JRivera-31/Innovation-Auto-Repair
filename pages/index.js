@@ -7,7 +7,7 @@ import Form from '../components/ContactForm/contact';
 
 export default function Home() {
   return (
-    <Layout>
+    <Layout home>
         <Head>
           <title>Innovation Auto</title>
         </Head>

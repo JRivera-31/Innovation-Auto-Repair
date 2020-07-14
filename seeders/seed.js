@@ -33,6 +33,13 @@ let blockoutSeeds = [
     }
 ]
 
+let userSeed = [
+    {
+        username: "ryan",
+        password: "asdf"
+    }
+]
+
 db.Appointments.deleteMany({})
     .then(() => db.Appointments.collection.insertMany(appointmentSeeds))
     .then(data => {
@@ -47,6 +54,19 @@ db.Appointments.deleteMany({})
 db.Blockout.deleteMany({})
     .then(() => {
         db.Blockout.collection.insertMany(blockoutSeeds)
+            .then(data => {
+                console.log(data);
+                process.exit(0);
+            })
+            .catch(err => {
+                console.log(err);
+                process.exit(1);
+            })
+    })
+
+db.User.deleteMany({})
+    .then(() => {
+        db.User.collection.insertMany(userSeed)
             .then(data => {
                 console.log(data);
                 process.exit(0);

@@ -1,4 +1,5 @@
 import Table from "react-bootstrap/Table";
+import style from './dashboard.module.css'
 import API from '../../util/API';
 import { useEffect, useState } from 'react';
 
@@ -10,7 +11,7 @@ const DashboardTable = () => {
     })
 
     return (
-        <div>
+        <div className={style.dashboardContainer}>
       <Table responsive>
         <thead>
           <tr>

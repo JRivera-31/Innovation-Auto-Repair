@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import ConfirmationPage from '../components/Confirmation/ConfirmationPage'
+import Layout from '../components/Layout/layout';
 
 export default function Confirmation() {
     return (
-<div>
+    <Layout>
         <Head>
         <title>Confirmation</title>
         <link
@@ -13,7 +14,7 @@ export default function Confirmation() {
                 />
       </Head>
       < ConfirmationPage />
-    </div>
+      </Layout>
     )
     
 }

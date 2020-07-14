@@ -1,0 +1,17 @@
+.confirmationContainer {
+    width: 65%;
+    margin: auto;
+    padding: 150px 50px;
+    text-align: center;
+    min-height: 100vh;
+    color: #000;
+    border: 2px solid #000;
+}
+.confirmationContainer a {
+    color: #000;
+}
+.details {
+    margin: auto;
+    width: 50%;
+    text-align: left;
+}

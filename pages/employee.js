@@ -1,15 +1,18 @@
-import Paper from "@material-ui/core/Paper"
-import utilStyles from "../styles/utils.module.css"
-import Form from "../components/EmployeeLoginForm/login"
+import Layout from '../components/Layout/layout';
+import Head from 'next/head';
+import Form from "../components/EmployeeLoginForm/login";
 
 export default function Employee() {
-    return (
-    <div className={utilStyles.background}>
-        <div className="container w-50">
-        <Paper>
-          <Form />
-        </Paper> 
-        </div> 
-    </div>
-    )
-}
+  return (
+    <Layout employee>
+      <Head>
+        <title>Employee Login</title>
+        <link href="https://fonts.googleapis.com/css2?family=Chau+Philomene+One&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"></link>
+      </Head>
+      <div>
+        <Form />
+      </div>
+    </Layout>
+  );
+};

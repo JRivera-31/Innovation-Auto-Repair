@@ -1,16 +1,80 @@
-.form {
-    background-color: lightyellow;
-    padding: 50px 30px;
+.formDiv {
+    height: 45em;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+}
+
+.heading {
+    padding: 2em 0 1.5em 0;
+    font-family: 'Chau Philomene One';
     text-align: center;
 }
 
-@media screen and (max-width: 700px) {
-    .form h1 {
-        font-size: 30px;
+.formHr {
+    margin: 0 auto;
+    width: 15%;
+    border: 1px solid rgb(161, 11, 11);
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 4em;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.formLabel {
+    margin: .4em auto;
+    width: 65%;
+}
+
+.formInput {
+    padding: .5em 0;
+    padding-left: 1em;
+    margin: .4em auto;
+    width: 65%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.formSubmit {
+    width: 30%;
+    margin: 1em auto;
+    padding: .5em 0;
+    border: 2px solid rgba(31, 31, 31, 0.801);
+    border-radius: 14px;
+    background-color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 400px) {
+    .formLabel,
+    .formInput {
+        width: 75%;
+    }
+
+    .formSubmit {
+        width: 40%;
     }
 }
-@media screen and (max-width: 500px) {
-    .form h1 {
-        font-size: 20px;
+
+@media screen and (min-width: 1024px) {
+    .heading {
+        padding: 2em 0 3em 0;
+    }
+
+    .formHr {
+        width: 5%;
+    }
+
+    .formLabel,
+    .formInput {
+        width: 35%;
+    }
+
+    .formSubmit {
+        width: 10%;
     }
 }

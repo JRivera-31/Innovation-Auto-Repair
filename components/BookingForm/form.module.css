@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 200px;
+    margin-bottom: 8rem;
 }
 
 .heading {
@@ -16,7 +16,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 4em;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -69,6 +68,10 @@
 }
 
 @media screen and (max-width: 400px) {
+    .formDiv{
+        margin-bottom: 10rem;
+    }
+
     .formLabel,
     .formInput {
         width: 75%;
@@ -80,13 +83,17 @@
 
     .bookingSubmit {
         width: 40%;
-        padding: 1.25em 0;
+        padding: .5em 0;
     }
 }
 
 @media screen and (min-width: 1024px) {
     .heading {
         padding: 4em 0 3em 0;
+    }
+
+    .formDiv{
+        margin-bottom: 15rem;
     }
 
     .formHr {

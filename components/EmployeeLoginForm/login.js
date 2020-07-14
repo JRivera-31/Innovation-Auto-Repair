@@ -11,7 +11,9 @@ export default class Form extends React.Component {
     e.preventDefault()
     API.login(this.state.username, this.state.password)
       .then(() => window.location.replace("/dashboard"))
-      .catch((err) => window.location.reload())
+      .catch((err) => {
+        console.log("Username or password is wrong")
+      })
   }
 
   handleNameChange = (e) => {

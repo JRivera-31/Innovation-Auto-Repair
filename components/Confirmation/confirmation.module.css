@@ -1,0 +1,48 @@
+.confirmationContainer {
+    width: 65%;
+    margin: auto;
+    padding: 150px 50px;
+    text-align: center;
+    min-height: 100vh;
+    color: #000;
+    border: 2px solid #000;
+}
+.confirmationHr {
+    margin: 0 auto;
+    width: 15%;
+    border: 1px solid rgb(161, 11, 11);
+    margin-bottom: 10px;
+}
+.confirmationContainer a {
+    color: #000;
+}
+.details {
+    margin: auto;
+    width: 50%;
+    text-align: left;
+}
+
+@media (max-width: 900px) {
+    .confirmationContainer {
+        padding: 150px 10px;
+    }
+    .details {
+        width: 85%;
+    }
+}
+@media (max-width: 700px) {
+    .confirmationContainer h1 {
+        font-size: 35px;
+    }
+}
+@media (max-width: 500px) {
+    .confirmationContainer {
+        padding: 150px 10px;
+    }
+    .confirmationContainer h1 {
+        font-size: 30px;
+    }
+    .details {
+        width: 100%;
+    }
+}

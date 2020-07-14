@@ -1,4 +1,4 @@
-import Table from "react-bootstrap/Table";
+import Table from 'react-bootstrap/Table';
 import style from './dashboard.module.css'
 import API from '../../util/API';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -19,35 +19,35 @@ const DashboardTable = () => {
 
     return (
         <div className={style.dashboardContainer}>
-      <Table responsive>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Date</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone Number</th>
-            <th>Description</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Description</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
             {appointmentData.map((item, i) => {
-                return (
-                    <tr>
-                        <th>{i + 1}</th>
-                        <th>{item.date.split(' ').join('/')}  {item.time.split(' ').join(':')}</th>
-                        <th>{item.name}</th>
-                        <th>{item.email}</th>
-                        <th>{item.phonenumber}</th>
-                        <th>{item.description}</th>
-                        <th><DeleteIcon onClick={() => appointmentDelete(item._id)}/></th>
-                    </tr>
-                )
+              return (
+                <tr>
+                  <th>{i + 1}</th>
+                  <th>{item.date.split(' ').join('/')}  {item.time.split(' ').join(':')}</th>
+                  <th>{item.name}</th>
+                  <th>{item.email}</th>
+                  <th>{item.phonenumber}</th>
+                  <th>{item.description}</th>
+                  <th><DeleteIcon onClick={() => appointmentDelete(item._id)}/></th>
+                </tr>
+              )
             })}
-        </tbody>
-      </Table>
-    </div>
+          </tbody>
+        </Table>
+      </div>
     )
 }
 

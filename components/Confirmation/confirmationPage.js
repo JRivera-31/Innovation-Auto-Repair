@@ -3,7 +3,7 @@ import API from "../../util/API"
 import {useEffect, useState} from "react"
 
 export default function ConfirmationPage() {
-  const [lastAppointment, setLast] = useState(null)
+  const [lastAppointment, setLast] = useState({})
   
   useEffect(() => {
     API.getLastAppointment().then(result => {

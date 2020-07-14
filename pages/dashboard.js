@@ -16,7 +16,6 @@ export default function Dashboard() {
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"></link>
       </Head>
       <DashboardTable />
-      <DashboardTable />
       <BlockoutTable />
       <EmployeeLogoutBtn />
     </div>

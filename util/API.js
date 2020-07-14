@@ -29,6 +29,10 @@ const API = {
     return axios.post("/user/login", { username, password })
   },
 
+  getMe: () => {
+    return axios.get("/user/me");
+  },
+
   logout: () => {
     return axios.get("/user/logout")
   }

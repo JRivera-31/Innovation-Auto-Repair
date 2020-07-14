@@ -16,7 +16,7 @@ router.post("/login", (req, res) => {
     db.User.findOne({ username: username })
         .then(user => {
             user.comparePassword(password, function (err, isMatch) {
-                if (isMatch && isMatch == true) {
+                if (isMatch) {
                     req.session.user = user
                     return res.status(200).json(user)
                 } else {
@@ -27,12 +27,8 @@ router.post("/login", (req, res) => {
         .catch(err => res.status(401).json(err))
 })
 
-router.get("/dashboard", (req, res) => {
-    if (!req.session.user) {
-        return res.status(401).send()
-    }
-
-    return res.status(200).send("Welcome!")
+router.get("/me", (req, res) => {
+    res.status(200).json(req.session.user);
 })
 
 router.get("/logout", (req, res) => {

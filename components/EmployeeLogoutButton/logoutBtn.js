@@ -5,8 +5,8 @@ import API from '../../util/API';
 export default function LogoutBtn() {
     
     const handleLogout = () => {
-        API.logout().then(res => {
-            res.redirect('/employee');
+        API.logout().then(() => {
+            window.location.replace('/login');
         })
     };
 

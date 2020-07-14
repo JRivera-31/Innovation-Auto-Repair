@@ -19,6 +19,14 @@ const API = {
 
   deleteBlockout: () => {
     return axios.delete('/api/blockouts', { date });
+  },
+
+  login: (username, password) => {
+    return axios.post("/user/login", { username, password })
+  },
+
+  logout: () => {
+    return axios.get("/user/logout")
   }
 }
 

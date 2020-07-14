@@ -38,7 +38,7 @@ app.prepare().then(() => {
     return handle(req, res, parsedUrl)
   })
 
-  server.listen(port, (err) => {
+  server.listen(PORT, (err) => {
     if (err) throw err
     console.log(`> 🌎 Listening on ${PORT}`)
   })

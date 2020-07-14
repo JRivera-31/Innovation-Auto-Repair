@@ -12,7 +12,7 @@ export default function About() {
         <div className={styles.text}>
           <p>
             Innovation Auto Hail Repair works to restore your vehicle to its
-            pre-storm condition. We work to bring back the value to your car.
+            pre-storm condition. We work to bring back the value to your car using Paint-less Dent Repair (PDR).
             With experienced technicians working on your vehicle we can
             guarantee your vehicle is in good hands.
           </p>

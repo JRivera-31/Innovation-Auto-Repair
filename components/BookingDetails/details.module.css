@@ -1,5 +1,7 @@
 .container {
+    width: 65vw;
     padding-top: 8rem;
+    margin: 0 auto;
     font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
 }
@@ -18,7 +20,7 @@
 
 @media screen and (min-width: 1024px) {
     .heading {
-        padding: 4em 0 3em 0;
+        padding: 4em 0 2em 0;
     }
 
     .formHr {

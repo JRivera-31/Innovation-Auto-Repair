@@ -24,6 +24,7 @@ router.post("/login", (req, res) => {
                 }
             })
         })
+        .catch(err => res.status(401).json(err))
 })
 
 router.get("/dashboard", (req, res) => {

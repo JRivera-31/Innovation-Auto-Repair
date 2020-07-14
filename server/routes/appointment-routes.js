@@ -4,48 +4,54 @@ const db = require("../../models")
 
 router.get("/appointments", (req, res) => {
     db.Appointments.find({}).then((appointments) => {
-        res.json(appointments)
+        res.status(200).json(appointments)
     })
-    .catch(err => console.log(err))
+    .catch(err => res.status(404).json(err))
+})
+
+router.get("/appointments", (req, res) => {
+    db.Appointments.find({}).then(appointments => {
+
+    })
 })
 
 router.post("/appointments", (req, res) => {
     let { name, email, phonenumber, description, date, time } = req.body 
 
     db.Appointments.create({ name, email, phonenumber, description, date, time })
-        .then(newAppointment => res.json(newAppointment))
-        .catch(err => console.log(err))
+        .then(newAppointment => res.status(200).json(newAppointment))
+        .catch(err => res.status(404).json(err))
 })
 
 router.delete('/appointments/:id', (req, res) => {
     db.Appointments.deleteOne({ _id: req.params.id })
-        .then(result => res.json(result))
-        .catch(err => console.log(err));
+        .then(result => res.status(200).json(result))
+        .catch(err => res.status(404).json(err));
 })
 
 router.get('/blockouts', (req, res) => {
     db.Blockout.find({})
         .then(blockouts => {
-            res.json(blockouts);
+            res.status(200).json(blockouts);
         })
         .catch(err => {
-            console.log(err);
+            res.status(404).json(err);
         })
 })
 
 router.post('/blockouts', (req, res) => {
     let { date } = req.body;
     db.Blockout.create({ date })
-        .then(newBlockout => res.json(newBlockout))
-        .catch(err => console.log(err));
+        .then(newBlockout => res.status(200).json(newBlockout))
+        .catch(err => res.status(404).json(err));
 })
 
 router.delete('/blockouts/:id', (req, res) => {
     db.Blockout.deleteOne({ _id: req.params.id })
         .then(result => {
-            res.json(result)
+            res.status(200).json(result)
         })
-        .catch(err => console.log(err));
+        .catch(err => res.status(404).json(err));
 })
 
 module.exports = router

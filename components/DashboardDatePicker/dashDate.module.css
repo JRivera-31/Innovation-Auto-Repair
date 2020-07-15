@@ -1,9 +1,40 @@
+.heading {
+    padding: 1em 0 .5em 0;
+}
+
 .dashDateContainer {
-    display: flex;
-    flex-direction: column;
+    padding: 1em 0;
 }
 
 .dashDateButton {
-    margin: 1em auto;
-    width: 10%;
+    width: 30%;
+    margin: .4em auto;
+    padding: .5em 0;
+    border: 2px solid rgba(31, 31, 31, 0.801);
+    border-radius: 14px;
+    background-color: white;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
+}
+
+.dashDateButton:hover {
+    background-color: var(--main-red);
+    color: white;
+}
+
+.datePicker {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 400px) {
+    .dashDateButton {
+        width: 40%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .dashDateButton {
+        width: 15%;
+    }
 }

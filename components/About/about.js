@@ -36,7 +36,6 @@ export default function About() {
                 className="d-block w-100"
                 src="/images/beforeAfter/beforeAfter1.jpg"
                 alt="First slide"
-                height={400}
               />
             </Carousel.Item>
             <Carousel.Item>
@@ -44,7 +43,6 @@ export default function About() {
                 className="d-block w-100"
                 src="/images/beforeAfter/beforeAfter2.jpg"
                 alt="Second slide"
-                height={400}
               />
             </Carousel.Item>
             <Carousel.Item>
@@ -52,7 +50,6 @@ export default function About() {
                 className="d-block w-100"
                 src="/images/beforeAfter/beforeAfter3.jpg"
                 alt="Third slide"
-                height={400}
               />
             </Carousel.Item>
           </Carousel>

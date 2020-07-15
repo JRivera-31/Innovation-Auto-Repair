@@ -50,6 +50,8 @@
 
 .photos {
     border-radius: 50%;
+    height: 125px;
+    width: 125px;
 }
 
 @media (min-width: 850px) {

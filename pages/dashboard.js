@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import DashboardTable from '../components/DashboardTable/DashboardTable';
 import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
 import EmployeeLogoutBtn from '../components/EmployeeLogoutButton/logoutBtn';
-import DashDatePicker from "../components/DashboardDatePicker/DashboardDatePicker";
+import style from './dashboard.module.css';
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);
@@ -23,7 +23,7 @@ export default function Dashboard() {
   }, []);
 
   return (
-    <div>
+    <div className={style.dashboardContainer}>
       <Head>
         <title>Dashboard</title>
         <link

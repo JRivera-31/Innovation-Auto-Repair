@@ -16,7 +16,7 @@ export default function ConfirmationPage() {
     <div className={style.confirmationContainer}>
       <h1>Appointment Booked!</h1>
       <div className={style.confirmationHr}></div>
-      <p>Thank you for booking an appointment with us! Please save the information below!</p>
+      <p>Thank you for booking an appointment with us! You appointment is confirmed!</p>
       <div className={style.details}>
         {/* <p><strong>Confirmation Number:</strong> {lastAppointment._id} </p>
         <p><strong>Date:</strong> {lastAppointment.date.split(' ').join('/')}   </p>

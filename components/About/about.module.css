@@ -52,6 +52,10 @@
     background: #000;
 }
 
+.d-block {
+    height: auto;
+}
+
 
 @media screen and (min-width: 1024px) {
     .text {
@@ -77,22 +81,22 @@
         width: 5%;
     }
 
-    .image {
+    .d-block {
         width: 400px;
         margin: 0 auto;
     }
 }
 
 @media screen and (max-width: 1024px) {
-    .image {
+    .d-block {
         width: 325px;
         margin: 0 auto;
     }
 }
 
 @media screen and (max-width: 350px) {
-    .image {
-        width: 250px;
+    .d-block {
+        width: 300px;
         margin: 0 auto;
     }
 }

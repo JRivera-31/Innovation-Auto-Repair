@@ -25,20 +25,21 @@ export default function Dashboard() {
   return (
     <div className={style.dashboardContainer}>
       <Head>
-        <title>Dashboard</title>
+        <title>Employee Dashboard</title>
         <link
           rel="shortcut icon"
           type="img/png"
           href="/images/Innovation_Logo-no-bg.png"
         />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"></link>
       </Head>
       {user ? (
         <>
           <EmployeeLogoutBtn />
-          <h1>APPOINTMENTS:</h1>
+          <h2>Appointments:</h2>
           <hr className={style.dashboardHr}/>
           <DashboardTable />
-          <h1>BLOCKED OUT DATES:</h1>
+          <h2>Blocked Out Dates:</h2>
           <hr className={style.dashboardHr}/>
           <BlockoutTable />
         </>

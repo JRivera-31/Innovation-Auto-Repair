@@ -18,7 +18,7 @@ const DashDatePicker = (props) => {
 
     return (
         <>
-        <h2 className={style.heading}>Block Out New Date:</h2>
+        <h3 className={style.heading}>Block Out New Date:</h3>
         <div className={style.dashDateContainer}>
             <DatePicker 
             selected={startDate} 

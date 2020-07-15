@@ -1,15 +1,21 @@
 .heading {
-    padding: 1em 0 .5em 0;
+    padding: 1em 0 0;
 }
 
 .dashDateContainer {
     padding: 1em 0;
 }
 
+.dashboardHr {
+    width: 7%;
+    border: 1px var(--main-red) solid;
+    margin: 1em auto;
+}
+
 .dashDateButton {
     width: 30%;
     margin: .4em auto;
-    padding: .5em 0;
+    padding: .3em 0;
     border: 2px solid rgba(31, 31, 31, 0.801);
     border-radius: 14px;
     background-color: white;
@@ -35,6 +41,7 @@
 
 @media screen and (min-width: 1024px) {
     .dashDateButton {
-        width: 15%;
+        width: 12%;
     }
+    
 }

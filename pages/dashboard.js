@@ -35,7 +35,9 @@ export default function Dashboard() {
       {user ? (
         <>
           <EmployeeLogoutBtn />
+          <h1>APPOINTMENTS:</h1>
           <DashboardTable />
+          <h1>BLOCKED OUT DATES:</h1>
           <BlockoutTable />
         </>
       ) : (

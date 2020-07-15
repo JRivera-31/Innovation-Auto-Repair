@@ -7,3 +7,9 @@
     margin: 1em auto;
     width: 10%;
 }
+
+.dashboardHr {
+    width: 5%;
+    border: 2px var(--main-red) solid;
+    margin: 1em auto;
+}

@@ -1,5 +1,4 @@
 import style from './hero.module.css';
-import { Button } from '@material-ui/core';
 import Link from "next/link"
 
 const Hero = () => {
@@ -8,7 +7,7 @@ const Hero = () => {
             <h1 className={style.heroTitle}>Innovation Auto Repair</h1>
             <p className={style.heroText}>Our commitment is to repair  your vehicle to its pre-storm condition!</p>
             <Link href="/booking">
-                <Button variant="contained"><a>Book Free Estimate Now!</a></Button>
+                <button className={style.button} variant="contained"><a>Book Free Estimate Now!</a></button>
             </Link>
         </section>
     )

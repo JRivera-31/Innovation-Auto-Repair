@@ -25,12 +25,13 @@ export default function Dashboard() {
   return (
     <div>
       <Head>
-        <title>Dashboard</title>
+        <title>Employee Dashboard</title>
         <link
           rel="shortcut icon"
           type="img/png"
           href="/images/Innovation_Logo-no-bg.png"
         />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"></link>
       </Head>
       {user ? (
         <>

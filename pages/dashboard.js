@@ -36,8 +36,10 @@ export default function Dashboard() {
         <>
           <EmployeeLogoutBtn />
           <h1>APPOINTMENTS:</h1>
+          <hr className={style.dashboardHr}/>
           <DashboardTable />
           <h1>BLOCKED OUT DATES:</h1>
+          <hr className={style.dashboardHr}/>
           <BlockoutTable />
         </>
       ) : (

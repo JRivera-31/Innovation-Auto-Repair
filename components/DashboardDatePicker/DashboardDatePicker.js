@@ -19,6 +19,7 @@ const DashDatePicker = (props) => {
     return (
     <div className={style.dashDateContainer}>
         <h1>Block Out New Date:</h1>
+        <hr className={style.dashboardHr} />
         <DatePicker 
         selected={startDate} 
         onChange={date => setStartDate(date)} />

@@ -14,8 +14,10 @@ export default function Foooter() {
                         <h4 className={styles.heading}>Innovation Auto Hail Repair</h4>
                         <div>
                         <ul>
-                            <li>3301 S Texas Ave</li>
-                            <li>Bryan, TX 77802</li>
+                            <a href="https://www.google.com/maps/search/?api=1&query=3301+S+Texas+Ave+Bryan%2+TX+77802" target="_blank">
+                                <li>3301 S Texas Ave</li>
+                                <li>Bryan, TX 77802</li>
+                            </a>
                             <li>Hours: 6AM-8PM M-F</li>
                         </ul>
                         </div>

@@ -1,17 +1,20 @@
-.btnDiv {
-    padding: 2.5rem;
+.logoutDiv {
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 2rem;
     text-align: center;
+    background-color: var(--main-red);
 }
 
-.btn {
-    width: 30%;
-    margin: .4em auto;
-    padding: .5em 0;
-    border: 2px solid rgba(31, 31, 31, 0.801);
-    border-radius: 14px;
-    background-color: white;
+.logoutDiv > a {
+    color: white;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 700;
+    
+}
+
+.logoutDiv > a:hover {
+    color: white;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 400px) {

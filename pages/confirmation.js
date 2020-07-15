@@ -8,10 +8,10 @@ export default function Confirmation() {
         <Head>
         <title>Confirmation</title>
         <link
-                    rel="shortcut icon"
-                    type="img/png"
-                    href="/images/Innovation_Logo-no-bg.png"
-                />
+            rel="shortcut icon"
+            type="img/png"
+            href="/images/Innovation_Logo-no-bg.png"
+        />
       </Head>
       < ConfirmationPage />
       </Layout>

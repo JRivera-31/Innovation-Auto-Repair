@@ -17,7 +17,7 @@ const API = {
     return axios.get('/api/blockouts');
   },
 
-  createBlockout: () => {
+  createBlockout: (date) => {
     return axios.post('/api/blockouts', { date });
   },
 

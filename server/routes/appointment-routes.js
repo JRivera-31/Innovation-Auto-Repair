@@ -41,6 +41,7 @@ router.post('/blockouts', (req, res) => {
 })
 
 router.delete('/blockouts/:id', (req, res) => {
+    console.log(req.params.id);
     db.Blockout.deleteOne({ _id: req.params.id })
         .then(result => {
             res.json(result)

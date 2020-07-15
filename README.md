@@ -58,5 +58,5 @@ If you have any questions feel free to contact any of the Authors.
 *A screen shot will be added when the UI is complete*
 
 ## Deployed Application
-Deployed: https://innovation-auto-repair.vercel.app/ <br>
+Deployed: http://innovation-pdr.herokuapp.com/ <br>
 *This site will eventually have its own domain name*

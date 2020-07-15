@@ -55,7 +55,7 @@ If you have any questions feel free to contact any of the Authors.
 
 
 ## Image
-*A screen shot will be added when the UI is complete*
+<img src="public/images/Capture.PNG" />
 
 ## Deployed Application
 Deployed: http://innovation-pdr.herokuapp.com/ <br>

@@ -17,13 +17,16 @@ const DashDatePicker = (props) => {
     }
 
     return (
-    <div className={style.dashDateContainer}>
-        <h1>Block Out New Date:</h1>
-        <DatePicker 
-        selected={startDate} 
-        onChange={date => setStartDate(date)} />
-        <button className={style.dashDateButton} onClick={() => newBlockout()}>New Date</button>
-    </div>
+        <>
+        <h2 className={style.heading}>Block Out New Date:</h2>
+        <div className={style.dashDateContainer}>
+            <DatePicker 
+            selected={startDate} 
+            onChange={date => setStartDate(date)}
+            className={style.datePicker} />
+        </div>
+        <button className={style.dashDateButton} onClick={() => newBlockout()}>Block Date</button>
+        </>
     );
 }
 

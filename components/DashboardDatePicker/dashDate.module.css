@@ -1,0 +1,9 @@
+.dashDateContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashDateButton {
+    margin: 1em auto;
+    width: 10%;
+}

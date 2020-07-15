@@ -2,18 +2,24 @@ import Table from 'react-bootstrap/Table';
 import style from './dashboard.module.css'
 import API from '../../util/API';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const DashboardTable = () => {
     const [appointmentData, setAppData] = useState([]);
 
-    API.getAppointmentData().then(res => {
-        setAppData(res.data);
-    })
+    useEffect(() => {
+      API.getAppointmentData().then(res => {
+          setAppData(res.data);
+      })
+    }, [])
 
     const appointmentDelete = (id) => {
         API.deleteAppointment(id)
-        .then(res => console.log(res))
+        .then(() => {
+          API.getAppointmentData().then(res => {
+            setAppData(res.data);
+          })
+        })
         .catch(err => console.log(err));
     }
 
@@ -33,10 +39,16 @@ const DashboardTable = () => {
           </thead>
           <tbody>
             {appointmentData.map((item, i) => {
+              let nonMilTime;
+              if(parseInt(item.time.split(' ')[0]) > 12) {
+                nonMilTime = `${parseInt(item.time.split(' ')[0]) - 12}:${item.time.split(' ')[1]} PM`
+              } else {
+                nonMilTime = `${item.time.split(' ').join(':')} AM`
+              }
               return (
                 <tr>
                   <th>{i + 1}</th>
-                  <th>{item.date.split(' ').join('/')}  {item.time.split(' ').join(':')}</th>
+                  <th>{item.date.split(' ').join('/')}  {nonMilTime}</th>
                   <th>{item.name}</th>
                   <th>{item.email}</th>
                   <th>{item.phonenumber}</th>

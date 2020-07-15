@@ -2,7 +2,7 @@ import DatePicker from 'react-datepicker';
 import { useState, useEffect } from 'react';
 import '../BookingForm/form.module.css';
 import API from "../../util/API"
-import { addDays, setHours, setMinutes, getDay, format, setMonth, setDate } from 'date-fns';
+import { addDays, setHours, setMinutes, getDay, format } from 'date-fns';
 
 const datePicker = (props) => {
     const [startDate, setStartDate] = useState(

@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import DashboardTable from '../components/DashboardTable/DashboardTable';
 import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
 import EmployeeLogoutBtn from '../components/EmployeeLogoutButton/logoutBtn';
+import DashDatePicker from "../components/DashboardDatePicker/DashboardDatePicker";
 
 export default function Dashboard() {
   const [user, setUser] = useState(null);

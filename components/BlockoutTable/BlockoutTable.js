@@ -2,17 +2,32 @@ import Table from "react-bootstrap/Table";
 import style from './dashboard.module.css'
 import API from '../../util/API';
 import DeleteIcon from '@material-ui/icons/Delete';
-import { useState } from 'react';
+import DashDatePicker from '../DashboardDatePicker/DashboardDatePicker'
+import { useState, useEffect } from 'react';
 
 const BlockoutTable = () => {
     const [blockoutData, setBlockoutData] = useState([]);
 
-    API.getBlockoutData().then(res => {
-        setBlockoutData(res.data);
-    })
+    useEffect(() => {
+      API.getBlockoutData().then(res => {
+          setBlockoutData(res.data);
+      })
+    }, [])
+
 
     const blockoutDelete = (id) => {
-        console.log(id);
+        API.deleteBlockout(id).then(() => {
+          API.getBlockoutData().then(res => setBlockoutData(res.data))
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }
+
+    const handleBlockoutAdd = () => {
+      API.getBlockoutData().then(res => {
+        setBlockoutData(res.data);
+      })
     }
 
     return (
@@ -37,6 +52,7 @@ const BlockoutTable = () => {
             })}
         </tbody>
       </Table>
+      <DashDatePicker setParentState={() => handleBlockoutAdd()}/>
     </div>
     )
 }

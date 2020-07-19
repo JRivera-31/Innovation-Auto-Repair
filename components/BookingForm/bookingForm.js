@@ -73,16 +73,16 @@ export default class BookingForm extends React.Component {
                     className={style.form}
                     onSubmit={this.submitForm}
                 >
-                    <label className={style.formLabel}>Name:</label>
+                    <label className={style.formLabel}>Name:<strong>*</strong></label>
                     <input className={style.formInput} type='text' placeholder='Name' onChange={(e) => this.handleNameChange(e)}></input>
-                    <label className={style.formLabel}>Email Address:</label>
+                    <label className={style.formLabel}>Email Address:<strong>*</strong></label>
                     <input className={style.formInput} type='text' placeholder='Email Address' onChange={(e) => this.handleEmailChange(e)}></input>
-                    <label className={style.formLabel}>Phone Number:</label>
+                    <label className={style.formLabel}>Phone Number:<strong>*</strong></label>
                     <input className={style.formInput} type='text' placeholder='Phone Number' onChange={(e) => this.handlePhoneChange(e)}></input>
                     <label className={style.formLabel}>Description of Damage:</label>
                     <textarea className={`${style.formInput} ${style.formTextArea}`} type='text' onChange={() => this.handleMessageChange(event)} placeholder='Please provide a brief description' cols="30" rows="5" maxLength={500}></textarea>
                     <p className={`${style.formCharCounter} ${style.formInput}`}>{this.state.messageLength}/300</p>
-                    <label className={style.formLabel}>Select Date & Time:</label>
+                    <label className={style.formLabel}>Select Date & Time:<strong>*</strong></label>
                     <div className={`${style.dateDiv} ${style.dateInput}`}>
                     <DatePicker setParentDateState={this.setParentDateState}/>
                     </div>

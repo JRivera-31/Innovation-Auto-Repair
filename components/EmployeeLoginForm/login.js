@@ -1,5 +1,6 @@
 import styles from "./login.module.css"
 import API from "../../util/API"
+import Router from "next/router"
 
 export default class Form extends React.Component {
   state = {
@@ -10,7 +11,7 @@ export default class Form extends React.Component {
   handleFormSubmit = (e) => {
     e.preventDefault()
     API.login(this.state.username, this.state.password)
-      .then(() => window.location.replace("/dashboard"))
+      .then(() => Router.push("/dashboard"))
       .catch((err) => {
         window.location.reload()
       })

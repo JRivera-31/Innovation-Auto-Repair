@@ -46,6 +46,5 @@ class newAppointment {
 }
 
 AppointmentSchema.loadClass(newAppointment)
-let Appointment = mongoose.model("Appointment", AppointmentSchema)
 
-module.exports = Appointment
+module.exports = mongoose.models.Appointment || mongoose.model("Appointment", AppointmentSchema)

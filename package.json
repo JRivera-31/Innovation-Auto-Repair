@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server/index.js",
+    "dev": "next dev",
     "build": "next build",
     "start": "node server/index.js -p $PORT",
     "seed": "node seeders/seed.js"
@@ -26,7 +26,7 @@
     "install": "^0.13.0",
     "isomorphic-fetch": "^2.2.1",
     "mongoose": "^5.9.22",
-    "next": "9.4.4",
+    "next": "^9.4.4",
     "npm": "^6.14.6",
     "react": "16.13.1",
     "react-bootstrap": "^1.1.1",

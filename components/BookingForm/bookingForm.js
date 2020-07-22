@@ -1,6 +1,8 @@
 import style from './form.module.css';
 import DatePicker from '../DatePicker/DatePicker';
 import API from "../../util/API"
+import fetch from "isomorphic-unfetch"
+import Router from "next/router"
 
 export default class BookingForm extends React.Component {
 
@@ -20,12 +22,34 @@ export default class BookingForm extends React.Component {
 
     //When you submit the form, pass the state key/value pairs into the api function
     handleFormSubmit = (e) => {
-        API.createAppointment(this.state.name, this.state.emailAddress, this.state.phoneNumber, this.state.description, this.state.selectedDate, this.state.selectedTime).then(() => {
-            console.log('appointment made');
-            window.location.replace("/confirmation")
-        })
+        e.preventDefault()
+        const newAppointment = {
+            name: this.state.name,
+            email: this.state.emailAddress,
+            phonenumber: this.state.phoneNumber,
+            description: this.state.description,
+            date: this.state.selectedDate,
+            time: this.state.selectedTime
+        }
+        this.createAppointment(newAppointment)
         //Reset the character counter to 0
         this.setState({ messageLength: 0 });
+    }
+
+    createAppointment = async (newAppointment) => {
+        try {
+            const res = await fetch("http://localhost:3000/api/appointment", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newAppointment)
+            })
+            Router.push("/confirmation")
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     handleNameChange = (e) => {

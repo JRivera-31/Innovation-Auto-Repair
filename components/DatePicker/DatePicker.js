@@ -45,24 +45,24 @@ const datePicker = (props) => {
     };
   
     //Filters the times
-    const filterData = () => {
-      //Grabs all of the made appointments
-      API.getAppointmentData().then(res => {
-        //Formats the state date into a usable form
-        let newDate = format(startDate, 'MM dd yyyy HH mm');
-        //Just the mm dd yyyy
-        let newDate2 = newDate.slice(0, 10);
-        //Go through every item
-        res.data.forEach(item => {
-          //If the appointment date matches the selected date
-          if(item.date === newDate2) {
-            //Black out the time slot
-            excludedTimesArr.push(setHours(setMinutes(startDate, parseInt(item.time.split(' ')[1])), parseInt(item.time.split(' ')[0])));
-            setExcluded(excludedTimesArr);
-          }
-        })
-      })
-    }
+    // const filterData = () => {
+    //   //Grabs all of the made appointments
+    //   API.getAppointmentData().then(res => {
+    //     //Formats the state date into a usable form
+    //     let newDate = format(startDate, 'MM dd yyyy HH mm');
+    //     //Just the mm dd yyyy
+    //     let newDate2 = newDate.slice(0, 10);
+    //     //Go through every item
+    //     res.data.forEach(item => {
+    //       //If the appointment date matches the selected date
+    //       if(item.date === newDate2) {
+    //         //Black out the time slot
+    //         excludedTimesArr.push(setHours(setMinutes(startDate, parseInt(item.time.split(' ')[1])), parseInt(item.time.split(' ')[0])));
+    //         setExcluded(excludedTimesArr);
+    //       }
+    //     })
+    //   })
+    // }
 
     //Every time the startdate loads/updates
     useEffect(() => {
@@ -75,18 +75,18 @@ const datePicker = (props) => {
       //Set it
       setExcluded(excludedTimesArr);
       //Call the filter
-      filterData();
+      // filterData();
     }, [startDate])
 
     //On load grab the blockout dates and push them to the array after converting them
-    useEffect(() => {
-      API.getBlockoutData()
-      .then(result => {
-        result.data.forEach(item => {
-          excludedDateArr.push(convertBlockout(item.date));
-        })
-      })
-    })
+    // useEffect(() => {
+    //   API.getBlockoutData()
+    //   .then(result => {
+    //     result.data.forEach(item => {
+    //       excludedDateArr.push(convertBlockout(item.date));
+    //     })
+    //   })
+    // })
 
     return (
       <DatePicker

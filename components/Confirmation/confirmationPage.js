@@ -1,7 +1,6 @@
 import style from "./confirmation.module.css";
 import API from "../../util/API"
 import { useEffect, useState } from "react"
-import fetch from "isomorphic-fetch"
 
 export default function ConfirmationPage() {
   // const [lastAppointment, setLast] = useState({})
@@ -28,11 +27,11 @@ export default function ConfirmationPage() {
   );
 }
 
-export async function getServerSideProps(context) {
-  const res = await fetch("http://localhost:3000/api/lastappointment")
-  const result = await res.json()
+// export async function getServerSideProps(context) {
+//   const res = await fetch("http://localhost:3000/api/lastappointment")
+//   const result = await res.json()
 
-  return {
-    props:  result.data  
-  }
-}
+//   return {
+//     props:  result.data  
+//   }
+// }

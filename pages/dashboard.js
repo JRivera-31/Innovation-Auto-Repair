@@ -9,17 +9,17 @@ import style from './dashboard.module.css';
 export default function Dashboard({appointments}) {
   const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   API.getMe()
-  //     .then((res) => {
-  //       if (!res.data) {
-  //         return Router.push("/login");
-  //       }
+  useEffect(() => {
+    // API.getMe()
+    //   .then((res) => {
+    //     if (!res.data) {
+    //       return Router.push("/login");
+    //     }
 
-  //       setUser(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, []);
+    //     setUser(res.data);
+    //   })
+    //   .catch((err) => console.log(err));
+  }, []);
 
   return (
     <div className={style.dashboardContainer}>

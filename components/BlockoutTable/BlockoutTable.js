@@ -5,14 +5,12 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import DashDatePicker from '../DashboardDatePicker/DashboardDatePicker'
 import { useState, useEffect } from 'react';
 
-const BlockoutTable = () => {
+const BlockoutTable = (props) => {
     const [blockoutData, setBlockoutData] = useState([]);
 
-    // useEffect(() => {
-    //   API.getBlockoutData().then(res => {
-    //       setBlockoutData(res.data);
-    //   })
-    // }, [])
+    useEffect(() => {
+      setBlockoutData(props.blockouts.data);
+    }, [])
 
 
     // const blockoutDelete = (id) => {
@@ -24,11 +22,9 @@ const BlockoutTable = () => {
     //     })
     // }
 
-    // const handleBlockoutAdd = () => {
-    //   API.getBlockoutData().then(res => {
-    //     setBlockoutData(res.data);
-    //   })
-    // }
+    const handleBlockoutAdd = () => {
+      setBlockoutData(props.blockouts.data);
+    }
 
     return (
         <div className={style.dashboardContainer}>

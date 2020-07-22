@@ -5,8 +5,9 @@ import DashboardTable from '../components/DashboardTable/DashboardTable';
 import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
 import EmployeeLogoutBtn from '../components/EmployeeLogoutButton/logoutBtn';
 import style from './dashboard.module.css';
+import fetchJSON from "fetch-json"
 
-export default function Dashboard({appointments}) {
+export default function Dashboard({appointments, blockouts}) {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function Dashboard({appointments}) {
         <DashboardTable appointments={appointments}/>
           <h2>Blocked Out Dates:</h2>
           <hr className={style.dashboardHr}/>
-          <BlockoutTable />
+          <BlockoutTable blockouts={blockouts} />
         </>
       {/* ) : (
         <div>Loading...</div>
@@ -50,8 +51,8 @@ export default function Dashboard({appointments}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/appointments/appointment")
-  const { data } = await res.json()
+  const appointments = fetchJSON.get("http://localhost:3000/api/appointments/appointment")
+  const blockouts = fetchJSON.get("http://localhost:3000/api/blockouts/blockout")
   
-  return { props: { appointments: data }}
+  return { props: { appointments: await appointments, blockouts: await blockouts }}
 }

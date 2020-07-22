@@ -3,17 +3,29 @@ import API from '../../util/API';
 import { useState } from 'react';
 import style from './dashDate.module.css';
 import { getMonth, format } from 'date-fns';
+import fetch from "isomorphic-unfetch"
 
 const DashDatePicker = (props) => {
     const [startDate, setStartDate] = useState(new Date());
 
-    const newBlockout = () => {
+    const newBlockout = async () => {
         console.log(getMonth(startDate));
         console.log(startDate);
         let newDate = format(startDate, 'MM dd yyyy')
-        API.createBlockout(newDate).then(() => {
+        try {
+            const res = await fetch("http://localhost:3000/api/blockouts/blockout", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({date: newDate})
+            })
             props.setParentState();
-        })
+        } catch (err) {
+            console.log(err)
+        }
+        
     }
 
     return (

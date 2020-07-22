@@ -19,8 +19,6 @@ export default function Booking({ appointments, blockouts }) {
 export async function getServerSideProps() {
   const appointments = fetchJSON.get("http://localhost:3000/api/appointments/appointment")
   const blockouts = fetchJSON.get("http://localhost:3000/api/blockouts/blockout")
-  // const { appointments } = await res1.json()
-  // const { data } = await res2.json()
   
   return { props: { appointments: await appointments, blockouts: await blockouts }}
 }

@@ -4,10 +4,6 @@ import '../BookingForm/form.module.css';
 import { addDays, setHours, setMinutes, getDay, format } from 'date-fns';
 
 const datePicker = (props) => {
-  
-  console.log(props.appointments.data)
-  console.log(props.blockouts.data)
-
     const [startDate, setStartDate] = useState(
       setHours(setMinutes(new Date(), 30), 16)
     );

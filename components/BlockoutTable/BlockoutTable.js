@@ -8,27 +8,27 @@ import { useState, useEffect } from 'react';
 const BlockoutTable = () => {
     const [blockoutData, setBlockoutData] = useState([]);
 
-    useEffect(() => {
-      API.getBlockoutData().then(res => {
-          setBlockoutData(res.data);
-      })
-    }, [])
+    // useEffect(() => {
+    //   API.getBlockoutData().then(res => {
+    //       setBlockoutData(res.data);
+    //   })
+    // }, [])
 
 
-    const blockoutDelete = (id) => {
-        API.deleteBlockout(id).then(() => {
-          API.getBlockoutData().then(res => setBlockoutData(res.data))
-        })
-        .catch(err => {
-          console.log(err);
-        })
-    }
+    // const blockoutDelete = (id) => {
+    //     API.deleteBlockout(id).then(() => {
+    //       API.getBlockoutData().then(res => setBlockoutData(res.data))
+    //     })
+    //     .catch(err => {
+    //       console.log(err);
+    //     })
+    // }
 
-    const handleBlockoutAdd = () => {
-      API.getBlockoutData().then(res => {
-        setBlockoutData(res.data);
-      })
-    }
+    // const handleBlockoutAdd = () => {
+    //   API.getBlockoutData().then(res => {
+    //     setBlockoutData(res.data);
+    //   })
+    // }
 
     return (
         <div className={style.dashboardContainer}>

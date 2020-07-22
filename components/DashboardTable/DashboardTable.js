@@ -1,6 +1,5 @@
 import Table from 'react-bootstrap/Table';
 import style from './dashboard.module.css'
-import API from '../../util/API';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useState, useEffect } from 'react';
 import fetch from "isomorphic-unfetch"
@@ -15,15 +14,16 @@ const DashboardTable = (props) => {
     //   })
     // }, [])
 
-    // const appointmentDelete = (id) => {
-    //     API.deleteAppointment(id)
-    //     .then(() => {
-    //       API.getAppointmentData().then(res => {
-    //         setAppData(res.data);
-    //       })
-    //     })
-    //     .catch(err => console.log(err));
-    // }
+    const appointmentDelete = async (id) => {
+      try {
+        const res = await fetch(`http://localhost:3000/api/appointments/${id}`, {
+          method: "DELETE"
+        })
+        window.location.reload()
+      } catch (err) {
+        console.log(err)
+      }
+    }
 
     return (
         <div className={style.dashboardContainer}>
@@ -41,7 +41,6 @@ const DashboardTable = (props) => {
           </thead>
           <tbody>
             {props.appointments.map((item, i) => {
-              <div key={item.id}></div>
               let nonMilTime;
               if(parseInt(item.time.split(' ')[0]) > 12) {
                 nonMilTime = `${parseInt(item.time.split(' ')[0]) - 12}:${item.time.split(' ')[1]} PM`

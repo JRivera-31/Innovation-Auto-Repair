@@ -37,7 +37,7 @@ export default class BookingForm extends React.Component {
 
     createAppointment = async (newAppointment) => {
         try {
-            const res = await fetch("http://localhost:3000/api/appointment", {
+            const res = await fetch("http://localhost:3000/api/appointments/appointment", {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",

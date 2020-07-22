@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Router from "next/router";
-import API from "../util/API";
 import { useState, useEffect } from "react";
 import DashboardTable from '../components/DashboardTable/DashboardTable';
 import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
@@ -51,7 +50,7 @@ export default function Dashboard({appointments}) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/appointment")
+  const res = await fetch("http://localhost:3000/api/appointments/appointment")
   const { data } = await res.json()
   
   return { props: { appointments: data }}

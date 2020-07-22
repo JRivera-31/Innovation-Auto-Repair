@@ -1,5 +1,5 @@
-import dbConnect from "../../util/dbConnect"
-import Appointment from "../../models/appointment"
+import dbConnect from "../../../util/dbConnect"
+import Appointment from "../../../models/appointment"
 
 export default async function handler(req, res) {
     const { method } = req
@@ -26,14 +26,6 @@ export default async function handler(req, res) {
                 res.status(400).json({success: false})
             }
             break
-        case "DELETE":
-            try {
-                const deletedApp = await Appointment.delete(req.params.id)
-
-                res.status(201).json({success: true})
-            } catch (err) {
-                res.status(400).json({success: false})
-            }
         default:
             res.status(400).json({ success: false })
             break

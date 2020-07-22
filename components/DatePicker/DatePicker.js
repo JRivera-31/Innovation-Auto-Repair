@@ -83,7 +83,7 @@ const datePicker = (props) => {
       props.blockouts.data.forEach(item => {
         excludedDateArr.push(convertBlockout(item.date));
       })
-    })
+    }, [])
 
     return (
       <DatePicker

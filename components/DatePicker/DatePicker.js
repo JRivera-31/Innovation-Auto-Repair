@@ -79,14 +79,11 @@ const datePicker = (props) => {
     }, [startDate])
 
     //On load grab the blockout dates and push them to the array after converting them
-    // useEffect(() => {
-    //   API.getBlockoutData()
-    //   .then(result => {
-    //     result.data.forEach(item => {
-    //       excludedDateArr.push(convertBlockout(item.date));
-    //     })
-    //   })
-    // })
+    useEffect(() => {
+      props.blockouts.data.forEach(item => {
+        excludedDateArr.push(convertBlockout(item.date));
+      })
+    })
 
     return (
       <DatePicker

@@ -60,14 +60,14 @@ const DashboardTable = (props) => {
             return (
               <tr>
                 <th key={item._id}>{i + 1}</th>
-                <th key={item._id}>
+                <th>
                   {item.date.split(" ").join("/")} {nonMilTime}
                 </th>
-                <th key={item._id}>{item.name}</th>
-                <th key={item._id}>{item.email}</th>
-                <th key={item._id}>{item.phonenumber}</th>
-                <th key={item._id}>{item.description}</th>
-                <th key={item._id}>
+                <th>{item.name}</th>
+                <th>{item.email}</th>
+                <th>{item.phonenumber}</th>
+                <th>{item.description}</th>
+                <th>
                   <DeleteIcon onClick={() => appointmentDelete(item._id)} />
                 </th>
               </tr>

@@ -4,7 +4,6 @@ import fetch from "isomorphic-unfetch"
 import Router from "next/router"
 
 export default class BookingForm extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -108,7 +107,7 @@ export default class BookingForm extends React.Component {
                                 <p className={`${style.formCharCounter} ${style.formInput}`}>{this.state.messageLength}/300</p>
                                 <label className={style.formLabel}>Select Date & Time:<strong>*</strong></label>
                                 <div className={`${style.dateDiv} ${style.dateInput}`}>
-                                    <DatePicker setParentDateState={this.setParentDateState} />
+                                    <DatePicker blockouts={this.props.blockouts}  appointments={this.props.appointments} setParentDateState={this.setParentDateState} />
                                 </div>
                         
                                 <button className={style.bookingSubmit} onClick={() => this.handleFormSubmit(event)}>Submit</button>

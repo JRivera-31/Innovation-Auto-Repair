@@ -1,10 +1,13 @@
 import DatePicker from 'react-datepicker';
 import { useState, useEffect } from 'react';
 import '../BookingForm/form.module.css';
-import API from "../../util/API"
 import { addDays, setHours, setMinutes, getDay, format } from 'date-fns';
 
 const datePicker = (props) => {
+  
+  console.log(props.appointments.data)
+  console.log(props.blockouts.data)
+
     const [startDate, setStartDate] = useState(
       setHours(setMinutes(new Date(), 30), 16)
     );

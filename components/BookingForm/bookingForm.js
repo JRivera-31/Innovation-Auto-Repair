@@ -1,6 +1,5 @@
 import style from './form.module.css';
 import DatePicker from '../DatePicker/DatePicker';
-import API from "../../util/API"
 import fetch from "isomorphic-unfetch"
 import Router from "next/router"
 
@@ -9,14 +8,14 @@ export default class BookingForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          name: "",
-          phoneNumber: "",
-          emailAddress: "",
-          messageLength: 0,
-          description: "",
-          status: "",
-          selectedDate: "",
-          selectedTime: ""
+            name: "",
+            phoneNumber: "",
+            emailAddress: "",
+            messageLength: 0,
+            description: "",
+            status: "",
+            selectedDate: "",
+            selectedTime: ""
         };
     }
 
@@ -46,6 +45,7 @@ export default class BookingForm extends React.Component {
                 },
                 body: JSON.stringify(newAppointment)
             })
+            alert("Success!")
             Router.push("/confirmation")
         } catch (err) {
             console.log(err)
@@ -93,26 +93,26 @@ export default class BookingForm extends React.Component {
                     <h1>Book an Estimate</h1>
                     <hr className={style.formHr} />
                 </div>
-                <form
-                    className={style.form}
-                    onSubmit={this.submitForm}
-                >
-                    <label className={style.formLabel}>Name:<strong>*</strong></label>
-                    <input className={style.formInput} type='text' placeholder='Name' onChange={(e) => this.handleNameChange(e)}></input>
-                    <label className={style.formLabel}>Email Address:<strong>*</strong></label>
-                    <input className={style.formInput} type='text' placeholder='Email Address' onChange={(e) => this.handleEmailChange(e)}></input>
-                    <label className={style.formLabel}>Phone Number:<strong>*</strong></label>
-                    <input className={style.formInput} type='text' placeholder='Phone Number' onChange={(e) => this.handlePhoneChange(e)}></input>
-                    <label className={style.formLabel}>Description of Damage:</label>
-                    <textarea className={`${style.formInput} ${style.formTextArea}`} type='text' onChange={() => this.handleMessageChange(event)} placeholder='Please provide a brief description' cols="30" rows="5" maxLength={500}></textarea>
-                    <p className={`${style.formCharCounter} ${style.formInput}`}>{this.state.messageLength}/300</p>
-                    <label className={style.formLabel}>Select Date & Time:<strong>*</strong></label>
-                    <div className={`${style.dateDiv} ${style.dateInput}`}>
-                    <DatePicker setParentDateState={this.setParentDateState}/>
-                    </div>
-                    
-                    <button className={style.bookingSubmit} onClick={() => this.handleFormSubmit(event)}>Submit</button>
-                </form>
+                         <form
+                                className={style.form}
+                                onSubmit={this.submitForm}
+                            >
+                                <label className={style.formLabel}>Name:<strong>*</strong></label>
+                                <input className={style.formInput} type='text' placeholder='Name' onChange={(e) => this.handleNameChange(e)}></input>
+                                <label className={style.formLabel}>Email Address:<strong>*</strong></label>
+                                <input className={style.formInput} type='text' placeholder='Email Address' onChange={(e) => this.handleEmailChange(e)}></input>
+                                <label className={style.formLabel}>Phone Number:<strong>*</strong></label>
+                                <input className={style.formInput} type='text' placeholder='Phone Number' onChange={(e) => this.handlePhoneChange(e)}></input>
+                                <label className={style.formLabel}>Description of Damage:</label>
+                                <textarea className={`${style.formInput} ${style.formTextArea}`} type='text' onChange={() => this.handleMessageChange(event)} placeholder='Please provide a brief description' cols="30" rows="5" maxLength={500}></textarea>
+                                <p className={`${style.formCharCounter} ${style.formInput}`}>{this.state.messageLength}/300</p>
+                                <label className={style.formLabel}>Select Date & Time:<strong>*</strong></label>
+                                <div className={`${style.dateDiv} ${style.dateInput}`}>
+                                    <DatePicker setParentDateState={this.setParentDateState} />
+                                </div>
+                        
+                                <button className={style.bookingSubmit} onClick={() => this.handleFormSubmit(event)}>Submit</button>
+                            </form>
             </div>
         );
     };

@@ -3,25 +3,27 @@ import style from './dashboard.module.css'
 import API from '../../util/API';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { useState, useEffect } from 'react';
+import fetch from "isomorphic-unfetch"
 
-const DashboardTable = () => {
+const DashboardTable = (props) => {
     const [appointmentData, setAppData] = useState([]);
 
-    useEffect(() => {
-      API.getAppointmentData().then(res => {
-          setAppData(res.data);
-      })
-    }, [])
+    console.log(props.appointments)
+    // useEffect(() => {
+    //   API.getAppointmentData().then(res => {
+    //       setAppData(res.data);
+    //   })
+    // }, [])
 
-    const appointmentDelete = (id) => {
-        API.deleteAppointment(id)
-        .then(() => {
-          API.getAppointmentData().then(res => {
-            setAppData(res.data);
-          })
-        })
-        .catch(err => console.log(err));
-    }
+    // const appointmentDelete = (id) => {
+    //     API.deleteAppointment(id)
+    //     .then(() => {
+    //       API.getAppointmentData().then(res => {
+    //         setAppData(res.data);
+    //       })
+    //     })
+    //     .catch(err => console.log(err));
+    // }
 
     return (
         <div className={style.dashboardContainer}>
@@ -38,7 +40,8 @@ const DashboardTable = () => {
             </tr>
           </thead>
           <tbody>
-            {appointmentData.map((item, i) => {
+            {props.appointments.map((item, i) => {
+              <div key={item.id}></div>
               let nonMilTime;
               if(parseInt(item.time.split(' ')[0]) > 12) {
                 nonMilTime = `${parseInt(item.time.split(' ')[0]) - 12}:${item.time.split(' ')[1]} PM`

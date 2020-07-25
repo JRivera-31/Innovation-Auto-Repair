@@ -1,13 +1,12 @@
 import React from 'react';
 import styles from './logoutBtn.module.css';
-import API from '../../util/API';
 import Router from "next/router"
 
 export default function LogoutBtn() {
     
-    const handleLogout = () => {
-        API.logout().then(() => {
-            Router.push('/login');
+    const handleLogout = async () => {
+        await fetch("/api/auth", {
+            method: "DELETE"
         })
     };
 

@@ -17,8 +17,8 @@ export default function Booking({ appointments, blockouts }) {
 };
 
 export async function getServerSideProps() {
-  const appointments = fetchJSON.get("http://localhost:3000/api/appointments/appointment")
-  const blockouts = fetchJSON.get("http://localhost:3000/api/blockouts/blockout")
+  const appointments = fetchJSON.get("https://innovation-auto-repair.jrivera-31.vercel.app/api/appointments/appointment")
+  const blockouts = fetchJSON.get("https://innovation-auto-repair.jrivera-31.vercel.app/api/blockouts/blockout")
   
   return { props: { appointments: await appointments, blockouts: await blockouts }}
 }

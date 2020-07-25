@@ -8,6 +8,7 @@ export default function LogoutBtn() {
         await fetch("/api/auth", {
             method: "DELETE"
         })
+        Router.push("/login")
     };
 
     return (

@@ -9,13 +9,12 @@ const BlockoutSchema = new Schema({
     }
 })
 
-class newBlockout {
+class Blockout {
     constructor({ date }) {
         this.date = date;
     }
 }
 
-BlockoutSchema.loadClass(newBlockout);
-let Blockout = mongoose.model('Blockout', BlockoutSchema);
+BlockoutSchema.loadClass(Blockout);
 
-module.exports = Blockout;
+module.exports = mongoose.models.Blockout || mongoose.model("Blockout", BlockoutSchema)

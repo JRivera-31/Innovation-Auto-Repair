@@ -1,10 +1,3 @@
-const mongoose = require("mongoose")
-let db = require("../models")
-
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/InnovationAutoRepair", {
-  useNewUrlParser: true
-})
-
 let appointmentSeeds = [
     {
         name: "Test Tester",
@@ -33,26 +26,44 @@ let blockoutSeeds = [
     }
 ]
 
-db.Appointments.deleteMany({})
-    .then(() => db.Appointments.collection.insertMany(appointmentSeeds))
-    .then(data => {
-        console.log(data.result.n + " seeds entered")
-        process.exit(0)
-    })
-    .catch(err => {
-        console.log(err)
-        process.exit(1)
-    })    
+const postData = async (appointmentSeeds) => {
+    const contentType = "application/json"
 
-db.Blockout.deleteMany({})
-    .then(() => {
-        db.Blockout.collection.insertMany(blockoutSeeds)
-            .then(data => {
-                console.log(data);
-                process.exit(0);
-            })
-            .catch(err => {
-                console.log(err);
-                process.exit(1);
-            })
-    })
+    try {
+        await fetch("/api/appointment", {
+            method: "POST",
+            headers: {
+                Accept: contentType,
+                "Content-Type": contentType
+            }, 
+            body: appointmentSeeds
+        })
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+
+// db.Appointments.deleteMany({})
+//     .then(() => db.Appointments.collection.insertMany(appointmentSeeds))
+//     .then(data => {
+//         console.log(data.result.n + " seeds entered")
+//         process.exit(0)
+//     })
+//     .catch(err => {
+//         console.log(err)
+//         process.exit(1)
+//     })    
+
+// db.Blockout.deleteMany({})
+//     .then(() => {
+//         db.Blockout.collection.insertMany(blockoutSeeds)
+//             .then(data => {
+//                 console.log(data);
+//                 process.exit(0);
+//             })
+//             .catch(err => {
+//                 console.log(err);
+//                 process.exit(1);
+//             })
+//     })

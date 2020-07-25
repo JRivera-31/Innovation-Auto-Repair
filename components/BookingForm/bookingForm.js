@@ -1,31 +1,53 @@
 import style from './form.module.css';
 import DatePicker from '../DatePicker/DatePicker';
-import API from "../../util/API"
+import Router from "next/router"
 
 export default class BookingForm extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
-          name: "",
-          phoneNumber: "",
-          emailAddress: "",
-          messageLength: 0,
-          description: "",
-          status: "",
-          selectedDate: "",
-          selectedTime: ""
+            name: "",
+            phoneNumber: "",
+            emailAddress: "",
+            messageLength: 0,
+            description: "",
+            status: "",
+            selectedDate: "",
+            selectedTime: ""
         };
     }
 
     //When you submit the form, pass the state key/value pairs into the api function
     handleFormSubmit = (e) => {
-        API.createAppointment(this.state.name, this.state.emailAddress, this.state.phoneNumber, this.state.description, this.state.selectedDate, this.state.selectedTime).then(() => {
-            console.log('appointment made');
-            window.location.replace("/confirmation")
-        })
+        e.preventDefault()
+        const newAppointment = {
+            name: this.state.name,
+            email: this.state.emailAddress,
+            phonenumber: this.state.phoneNumber,
+            description: this.state.description,
+            date: this.state.selectedDate,
+            time: this.state.selectedTime
+        }
+        this.createAppointment(newAppointment)
         //Reset the character counter to 0
         this.setState({ messageLength: 0 });
+    }
+
+    createAppointment = async (newAppointment) => {
+        try {
+            const res = await fetch("/api/appointments/appointment", {
+                method: "POST",
+                headers: {
+                    "Accept": "application/json",
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newAppointment)
+            })
+            alert("Success!")
+            Router.push("/confirmation")
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     handleNameChange = (e) => {
@@ -69,26 +91,26 @@ export default class BookingForm extends React.Component {
                     <h1>Book an Estimate</h1>
                     <hr className={style.formHr} />
                 </div>
-                <form
-                    className={style.form}
-                    onSubmit={this.submitForm}
-                >
-                    <label className={style.formLabel}>Name:<strong>*</strong></label>
-                    <input className={style.formInput} type='text' placeholder='Name' onChange={(e) => this.handleNameChange(e)}></input>
-                    <label className={style.formLabel}>Email Address:<strong>*</strong></label>
-                    <input className={style.formInput} type='text' placeholder='Email Address' onChange={(e) => this.handleEmailChange(e)}></input>
-                    <label className={style.formLabel}>Phone Number:<strong>*</strong></label>
-                    <input className={style.formInput} type='text' placeholder='Phone Number' onChange={(e) => this.handlePhoneChange(e)}></input>
-                    <label className={style.formLabel}>Description of Damage:</label>
-                    <textarea className={`${style.formInput} ${style.formTextArea}`} type='text' onChange={() => this.handleMessageChange(event)} placeholder='Please provide a brief description' cols="30" rows="5" maxLength={500}></textarea>
-                    <p className={`${style.formCharCounter} ${style.formInput}`}>{this.state.messageLength}/300</p>
-                    <label className={style.formLabel}>Select Date & Time:<strong>*</strong></label>
-                    <div className={`${style.dateDiv} ${style.dateInput}`}>
-                    <DatePicker setParentDateState={this.setParentDateState}/>
-                    </div>
-                    
-                    <button className={style.bookingSubmit} onClick={() => this.handleFormSubmit(event)}>Submit</button>
-                </form>
+                         <form
+                                className={style.form}
+                                onSubmit={this.submitForm}
+                            >
+                                <label className={style.formLabel}>Name:<strong>*</strong></label>
+                                <input className={style.formInput} type='text' placeholder='Name' onChange={(e) => this.handleNameChange(e)}></input>
+                                <label className={style.formLabel}>Email Address:<strong>*</strong></label>
+                                <input className={style.formInput} type='text' placeholder='Email Address' onChange={(e) => this.handleEmailChange(e)}></input>
+                                <label className={style.formLabel}>Phone Number:<strong>*</strong></label>
+                                <input className={style.formInput} type='text' placeholder='Phone Number' onChange={(e) => this.handlePhoneChange(e)}></input>
+                                <label className={style.formLabel}>Description of Damage:</label>
+                                <textarea className={`${style.formInput} ${style.formTextArea}`} type='text' onChange={() => this.handleMessageChange(event)} placeholder='Please provide a brief description' cols="30" rows="5" maxLength={500}></textarea>
+                                <p className={`${style.formCharCounter} ${style.formInput}`}>{this.state.messageLength}/300</p>
+                                <label className={style.formLabel}>Select Date & Time:<strong>*</strong></label>
+                                <div className={`${style.dateDiv} ${style.dateInput}`}>
+                                    <DatePicker blockouts={this.props.blockouts}  appointments={this.props.appointments} setParentDateState={this.setParentDateState} />
+                                </div>
+                        
+                                <button className={style.bookingSubmit} onClick={() => this.handleFormSubmit(event)}>Submit</button>
+                            </form>
             </div>
         );
     };

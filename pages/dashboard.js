@@ -1,26 +1,22 @@
 import Head from "next/head";
 import Router from "next/router";
-import API from "../util/API";
 import { useState, useEffect } from "react";
 import DashboardTable from '../components/DashboardTable/DashboardTable';
 import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
 import EmployeeLogoutBtn from '../components/EmployeeLogoutButton/logoutBtn';
 import style from './dashboard.module.css';
+import { useCurrentUser } from "../lib/hooks"
+import dbConnect from "../util/dbConnect"
+import Appointment from "../models/appointment"
+import Blockout from "../models/blockout"
 
-export default function Dashboard() {
-  const [user, setUser] = useState(null);
-
+export default function Dashboard({appointments, blockouts}) {
+  // const [user, setUser] = useState(null);
+  const [user, { mutate }] = useCurrentUser()
+  
   useEffect(() => {
-    API.getMe()
-      .then((res) => {
-        if (!res.data) {
-          return Router.push("/login");
-        }
-
-        setUser(res.data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    if(!user) Router.push("/login")
+  }, [user]);
 
   return (
     <div className={style.dashboardContainer}>
@@ -38,14 +34,34 @@ export default function Dashboard() {
           <EmployeeLogoutBtn />
           <h2>Appointments:</h2>
           <hr className={style.dashboardHr}/>
-          <DashboardTable />
+        <DashboardTable appointments={appointments}/>
           <h2>Blocked Out Dates:</h2>
           <hr className={style.dashboardHr}/>
-          <BlockoutTable />
+          <BlockoutTable blockouts={blockouts} />
         </>
       ) : (
         <div>Loading...</div>
       )}
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  await dbConnect()
+
+  const result = await Appointment.find({})
+  const appointments = result.map(doc => {
+    const appointment = doc.toObject()
+    appointment._id = appointment._id.toString()
+    return appointment
+  })
+
+  const result2 = await Blockout.find({})
+  const blockouts = result2.map(doc => {
+    const blockout = doc.toObject()
+    blockout._id = blockout._id.toString()
+    return blockout
+  })
+  
+  return {props: {appointments: appointments, blockouts: blockouts}}
 }

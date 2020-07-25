@@ -1,14 +1,17 @@
 import React from 'react';
 import styles from './logoutBtn.module.css';
-import API from '../../util/API';
 import Router from "next/router"
+import { useCurrentUser } from "../../lib/hooks"
 
 export default function LogoutBtn() {
-    
-    const handleLogout = () => {
-        API.logout().then(() => {
-            Router.push('/login');
+    const [user, { mutate }] = useCurrentUser()
+
+    const handleLogout = async () => {
+        await fetch("/api/auth", {
+            method: "DELETE"
         })
+        mutate(null)
+        Router.push("/login")
     };
 
     return (

@@ -1,37 +1,33 @@
 import Table from "react-bootstrap/Table";
-import style from './dashboard.module.css'
-import API from '../../util/API';
-import DeleteIcon from '@material-ui/icons/Delete';
-import DashDatePicker from '../DashboardDatePicker/DashboardDatePicker'
-import { useState, useEffect } from 'react';
+import style from "./dashboard.module.css";
+import DeleteIcon from "@material-ui/icons/Delete";
+import DashDatePicker from "../DashboardDatePicker/DashboardDatePicker";
+import { useState, useEffect } from "react";
 
-const BlockoutTable = () => {
-    const [blockoutData, setBlockoutData] = useState([]);
+const BlockoutTable = (props) => {
+  const [blockoutData, setBlockoutData] = useState([]);
 
-    useEffect(() => {
-      API.getBlockoutData().then(res => {
-          setBlockoutData(res.data);
+  useEffect(() => {
+    setBlockoutData(props.blockouts);
+  }, []);
+
+  const blockoutDelete = async (id) => {
+    try {
+      const res = await fetch(`/api/blockouts/${id}`, {
+        method: "DELETE"
       })
-    }, [])
-
-
-    const blockoutDelete = (id) => {
-        API.deleteBlockout(id).then(() => {
-          API.getBlockoutData().then(res => setBlockoutData(res.data))
-        })
-        .catch(err => {
-          console.log(err);
-        })
+      window.location.reload()
+    } catch (err) {
+      console.log(err)
     }
+  };
 
-    const handleBlockoutAdd = () => {
-      API.getBlockoutData().then(res => {
-        setBlockoutData(res.data);
-      })
-    }
+  const handleBlockoutAdd = () => {
+    setBlockoutData(props.blockouts);
+  };
 
-    return (
-        <div className={style.dashboardContainer}>
+  return (
+    <div className={style.dashboardContainer}>
       <Table responsive>
         <thead>
           <tr>
@@ -41,20 +37,22 @@ const BlockoutTable = () => {
           </tr>
         </thead>
         <tbody>
-            {blockoutData.map((item, i) => {
-                return (
-                    <tr>
-                        <th>{i + 1}</th>
-                        <th>{item.date.split(' ').join('/')}</th>
-                        <th><DeleteIcon onClick={() => blockoutDelete(item._id)}/></th>
-                    </tr>
-                )
-            })}
+          {blockoutData.map((item, i) => {
+            return (
+              <tr>
+                <th>{i + 1}</th>
+                <th>{item.date.split(" ").join("/")}</th>
+                <th>
+                  <DeleteIcon onClick={() => blockoutDelete(item._id)} />
+                </th>
+              </tr>
+            );
+          })}
         </tbody>
       </Table>
-      <DashDatePicker setParentState={() => handleBlockoutAdd()}/>
+      <DashDatePicker setParentState={() => handleBlockoutAdd()} />
     </div>
-    )
-}
+  );
+};
 
 export default BlockoutTable;

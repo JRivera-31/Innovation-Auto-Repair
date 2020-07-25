@@ -2,7 +2,9 @@ import Layout from '../components/Layout/layout';
 import Head from 'next/head';
 import BookingDetails from '../components/BookingDetails/details';
 import BookingForm from '../components/BookingForm/bookingForm';
-import fetchJSON from "fetch-json"
+import Appointment from "../models/appointment"
+import Blockout from "../models/blockout"
+import dbConnect from "../util/dbConnect"
 
 export default function Booking({ appointments, blockouts }) {
   return (
@@ -17,8 +19,21 @@ export default function Booking({ appointments, blockouts }) {
 };
 
 export async function getServerSideProps() {
-  const appointments = fetchJSON.get("https://innovation-auto-repair.jrivera-31.vercel.app/api/appointments/appointment")
-  const blockouts = fetchJSON.get("https://innovation-auto-repair.jrivera-31.vercel.app/api/blockouts/blockout")
+  await dbConnect()
+
+  const result = await Appointment.find({})
+  const appointments = result.map(doc => {
+    const appointment = doc.toObject()
+    appointment._id = appointment._id.toString()
+    return appointment
+  })
+
+  const result2 = await Blockout.find({})
+  const blockouts = result2.map(doc => {
+    const blockout = doc.toObject()
+    blockout._id = blockout._id.toString()
+    return blockout
+  })
   
-  return { props: { appointments: await appointments, blockouts: await blockouts }}
+  return {props: {appointments: appointments, blockouts: blockouts}}
 }

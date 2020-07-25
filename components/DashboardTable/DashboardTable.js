@@ -7,7 +7,7 @@ const DashboardTable = (props) => {
   const [appointmentData, setAppData] = useState([]);
   
   useEffect(() => {
-    setAppData(props.appointments.data);
+    setAppData(props.appointments);
   }, []);
 
   const appointmentDelete = async (id) => {

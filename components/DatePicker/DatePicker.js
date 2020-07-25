@@ -53,8 +53,8 @@ const datePicker = (props) => {
     let newDate = format(startDate, "MM dd yyyy HH mm");
     //Just the mm dd yyyy
     let newDate2 = newDate.slice(0, 10);
-    //Go through every item
-    props.appointments.data.forEach((item) => {
+    // Go through every item
+    props.appointments.forEach((item) => {
       //If the appointment date matches the selected date
       if (item.date === newDate2) {
         //Black out the time slot
@@ -85,7 +85,7 @@ const datePicker = (props) => {
 
   //On load grab the blockout dates and push them to the array after converting them
   useEffect(() => {
-    props.blockouts.data.forEach((item) => {
+    props.blockouts.forEach((item) => {
       excludedDateArr.push(convertBlockout(item.date));
       console.log(excludedDateArr)
     });

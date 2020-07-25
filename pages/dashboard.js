@@ -5,8 +5,10 @@ import DashboardTable from '../components/DashboardTable/DashboardTable';
 import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
 import EmployeeLogoutBtn from '../components/EmployeeLogoutButton/logoutBtn';
 import style from './dashboard.module.css';
-import fetchJSON from "fetch-json"
 import { useCurrentUser } from "../lib/hooks"
+import dbConnect from "../util/dbConnect"
+import Appointment from "../models/appointment"
+import Blockout from "../models/blockout"
 
 export default function Dashboard({appointments, blockouts}) {
   // const [user, setUser] = useState(null);
@@ -45,8 +47,21 @@ export default function Dashboard({appointments, blockouts}) {
 }
 
 export async function getServerSideProps() {
-  const appointments = fetchJSON.get("https://innovation-auto-repair.jrivera-31.vercel.app/api/appointments/appointment")
-  const blockouts = fetchJSON.get("https://innovation-auto-repair.jrivera-31.vercel.app/api/blockouts/blockout")
+  await dbConnect()
+
+  const result = await Appointment.find({})
+  const appointments = result.map(doc => {
+    const appointment = doc.toObject()
+    appointment._id = appointment._id.toString()
+    return appointment
+  })
+
+  const result2 = await Blockout.find({})
+  const blockouts = result2.map(doc => {
+    const blockout = doc.toObject()
+    blockout._id = blockout._id.toString()
+    return blockout
+  })
   
-  return { props: { appointments: await appointments, blockouts: await blockouts }}
+  return {props: {appointments: appointments, blockouts: blockouts}}
 }

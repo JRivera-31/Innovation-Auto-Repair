@@ -8,7 +8,7 @@ const BlockoutTable = (props) => {
   const [blockoutData, setBlockoutData] = useState([]);
 
   useEffect(() => {
-    setBlockoutData(props.blockouts.data);
+    setBlockoutData(props.blockouts);
   }, []);
 
   const blockoutDelete = async (id) => {
@@ -23,7 +23,7 @@ const BlockoutTable = (props) => {
   };
 
   const handleBlockoutAdd = () => {
-    setBlockoutData(props.blockouts.data);
+    setBlockoutData(props.blockouts);
   };
 
   return (

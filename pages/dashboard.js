@@ -6,21 +6,15 @@ import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
 import EmployeeLogoutBtn from '../components/EmployeeLogoutButton/logoutBtn';
 import style from './dashboard.module.css';
 import fetchJSON from "fetch-json"
+import { useCurrentUser } from "../lib/hooks"
 
 export default function Dashboard({appointments, blockouts}) {
-  const [user, setUser] = useState(null);
-
+  // const [user, setUser] = useState(null);
+  const [user, { mutate }] = useCurrentUser()
+  
   useEffect(() => {
-    // API.getMe()
-    //   .then((res) => {
-    //     if (!res.data) {
-    //       return Router.push("/login");
-    //     }
-
-    //     setUser(res.data);
-    //   })
-    //   .catch((err) => console.log(err));
-  }, []);
+    if(!user) Router.push("/login")
+  }, [user]);
 
   return (
     <div className={style.dashboardContainer}>
@@ -33,7 +27,7 @@ export default function Dashboard({appointments, blockouts}) {
         />
         <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;700&display=swap" rel="stylesheet"></link>
       </Head>
-      {/* {user ? ( */}
+      {user ? (
         <>
           <EmployeeLogoutBtn />
           <h2>Appointments:</h2>
@@ -43,9 +37,9 @@ export default function Dashboard({appointments, blockouts}) {
           <hr className={style.dashboardHr}/>
           <BlockoutTable blockouts={blockouts} />
         </>
-      {/* ) : (
+      ) : (
         <div>Loading...</div>
-      )} */}
+      )}
     </div>
   );
 }

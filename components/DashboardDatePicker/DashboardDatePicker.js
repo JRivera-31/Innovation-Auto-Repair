@@ -2,7 +2,6 @@ import DatePicker from 'react-datepicker';
 import { useState } from 'react';
 import style from './dashDate.module.css';
 import { getMonth, format } from 'date-fns';
-import fetch from "isomorphic-unfetch"
 
 const DashDatePicker = (props) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -12,7 +11,7 @@ const DashDatePicker = (props) => {
         console.log(startDate);
         let newDate = format(startDate, 'MM dd yyyy')
         try {
-            const res = await fetch("http://localhost:3000/api/blockouts/blockout", {
+            const res = await fetch("/api/blockouts/blockout", {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",

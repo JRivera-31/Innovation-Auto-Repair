@@ -2,7 +2,6 @@ import Table from "react-bootstrap/Table";
 import style from "./dashboard.module.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useState, useEffect } from "react";
-import fetch from "isomorphic-unfetch";
 
 const DashboardTable = (props) => {
   const [appointmentData, setAppData] = useState([]);
@@ -13,7 +12,7 @@ const DashboardTable = (props) => {
 
   const appointmentDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/appointments/${id}`, {
+      const res = await fetch(`/api/appointments/${id}`, {
         method: "DELETE",
       });
       getAppointments();
@@ -24,10 +23,11 @@ const DashboardTable = (props) => {
 
   const getAppointments = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/appointments/appointment", {
+      const res = await fetch("/api/appointments/appointment", {
         method: "GET",
       })
       setAppData(res.data)
+      window.location.reload()
     } catch (err) {
       console.log(err)
     } 

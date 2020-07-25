@@ -3,7 +3,6 @@ import style from "./dashboard.module.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import DashDatePicker from "../DashboardDatePicker/DashboardDatePicker";
 import { useState, useEffect } from "react";
-import fetch from "isomorphic-unfetch"
 
 const BlockoutTable = (props) => {
   const [blockoutData, setBlockoutData] = useState([]);
@@ -14,7 +13,7 @@ const BlockoutTable = (props) => {
 
   const blockoutDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/blockouts/${id}`, {
+      const res = await fetch(`/api/blockouts/${id}`, {
         method: "DELETE"
       })
       window.location.reload()

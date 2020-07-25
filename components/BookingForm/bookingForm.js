@@ -1,6 +1,5 @@
 import style from './form.module.css';
 import DatePicker from '../DatePicker/DatePicker';
-import fetch from "isomorphic-unfetch"
 import Router from "next/router"
 
 export default class BookingForm extends React.Component {
@@ -36,7 +35,7 @@ export default class BookingForm extends React.Component {
 
     createAppointment = async (newAppointment) => {
         try {
-            const res = await fetch("http://localhost:3000/api/appointments/appointment", {
+            const res = await fetch("/api/appointments/appointment", {
                 method: "POST",
                 headers: {
                     "Accept": "application/json",

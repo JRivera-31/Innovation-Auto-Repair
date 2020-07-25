@@ -1,5 +1,4 @@
 import style from "./confirmation.module.css";
-import API from "../../util/API"
 import { useEffect, useState } from "react"
 
 export default function ConfirmationPage() {

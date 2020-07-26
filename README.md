@@ -58,5 +58,5 @@ If you have any questions feel free to contact any of the Authors.
 <img src="public/images/Capture.PNG" />
 
 ## Deployed Application
-Deployed: http://innovation-pdr.herokuapp.com/ <br>
+Deployed: https://innovation-auto-repair.vercel.app/ <br>
 *This site will eventually have its own domain name*

@@ -22,7 +22,14 @@ export default function About() {
             </span>{" "}
             We give special discounts for those paying out of pocket.
           </p>
-          <p>Have a non-hail related dent? We fix those too!</p>
+          <p>Have a non-hail related dent? We fix those too! <br /> <br />
+            <strong>Hours:</strong> Monday-Friday 6AM - 8PM <br />
+            <strong>Location: </strong>
+            <a href="https://www.google.com/maps/search/?api=1&query=3301+S+Texas+Ave+Bryan%2+TX+77802" target="_blank">
+              3301 S Texas Ave
+              Bryan, TX 77802
+            </a>
+          </p>
           <p>
               Please <span><a className={`${styles.anchor} ${styles.boldText}`} href="#contact-section">contact us</a></span> with any questions or concerns.
           </p>

@@ -11,11 +11,14 @@ import Appointment from "../models/appointment"
 import Blockout from "../models/blockout"
 
 export default function Dashboard({appointments, blockouts}) {
-  // const [user, setUser] = useState(null);
   const [user, { mutate }] = useCurrentUser()
   
   useEffect(() => {
-    if(!user) Router.push("/login")
+    if (user) {
+      Router.push("/dashboard")
+    } else {
+      Router.push("/login")
+    }
   }, [user]);
 
   return (

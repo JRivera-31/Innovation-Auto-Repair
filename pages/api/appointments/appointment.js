@@ -3,11 +3,10 @@ import Appointment from "../../../models/appointment"
 
 export default async function handler(req, res) {
     const { method } = req
-    
-    await dbConnect()
 
-    switch (method) {
+    switch (method) {   
         case "GET":
+            dbConnect()
             try {
                 const appointments = await Appointment.find({})
                 
@@ -17,6 +16,7 @@ export default async function handler(req, res) {
             }
             break
         case "POST":
+            dbConnect()
             try {
                 const appointment = await Appointment.create(
                     req.body

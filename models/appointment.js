@@ -33,7 +33,7 @@ const AppointmentSchema = new Schema({
     }
 })
 
-class newAppointment {
+class Appointment {
     constructor({ id, name, email, phonenumber, description, date, time}) {
         this.id = id
         this.name = name
@@ -45,6 +45,6 @@ class newAppointment {
     }
 }
 
-AppointmentSchema.loadClass(newAppointment)
+AppointmentSchema.loadClass(Appointment)
 
 module.exports = mongoose.models.Appointment || mongoose.model("Appointment", AppointmentSchema)

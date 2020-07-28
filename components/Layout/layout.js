@@ -21,6 +21,7 @@ export default function Layout({ children, employee, home }) {
                     type="img/png"
                     href="/images/Innovation_Logo-no-bg.png"
                 />
+                    <meta property="og:image" content="../../public/images/Capture.PNG" />
             </Head>
             {!employee ? (
                 <>

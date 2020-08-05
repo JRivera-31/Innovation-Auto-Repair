@@ -3,6 +3,7 @@ import style from "./dashboard.module.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useState, useEffect } from "react";
 import fetch from "isomorphic-unfetch"
+import Router from "next/router"
 
 const DashboardTable = (props) => {
   const [appointmentData, setAppData] = useState([]);
@@ -16,7 +17,7 @@ const DashboardTable = (props) => {
       const res = await fetch(`/api/appointments/${id}`, {
         method: "DELETE",
       });
-      setAppData(props.appointments)
+      Router.reload()
     } catch (err) {
       console.log(err);
     }

@@ -24,8 +24,6 @@ export default function Form() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(body)
     })
-    // Extract JWT
-    const { jwt_token } = await response.json()
 
     if (res.status === 200) {
       const userObj = await res.json()

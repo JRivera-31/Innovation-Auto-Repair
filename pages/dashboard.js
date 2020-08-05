@@ -1,6 +1,5 @@
 import Head from "next/head";
-import Router from "next/router";
-import { useState, useEffect } from "react";
+import Link from "next/link"
 import DashboardTable from '../components/DashboardTable/DashboardTable';
 import BlockoutTable from '../components/BlockoutTable/BlockoutTable';
 import EmployeeLogoutBtn from '../components/EmployeeLogoutButton/logoutBtn';
@@ -10,16 +9,14 @@ import dbConnect from "../util/dbConnect"
 import Appointment from "../models/appointment"
 import Blockout from "../models/blockout"
 
-export default function Dashboard({appointments, blockouts}) {
-  const [user, { mutate }] = useCurrentUser()
+export default function Dashboard({ appointments, blockouts}) {
+  const [user, {mutate}] = useCurrentUser()
   
-  useEffect(() => {
-    if (user) {
-      Router.push("/dashboard")
-    } else {
-      Router.push("/login")
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (!user) {
+  //     Router.push("/login")
+  //   }
+  // }, [user]);
 
   return (
     <div className={style.dashboardContainer}>
@@ -43,13 +40,15 @@ export default function Dashboard({appointments, blockouts}) {
           <BlockoutTable blockouts={blockouts} />
         </>
       ) : (
-        <div>Loading...</div>
+        <div>Please login here: <Link href="/login"><a>Login</a></Link></div>
       )}
     </div>
   );
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req, res }) {
+  // await applySession(req, res)
+
   await dbConnect()
 
   const result = await Appointment.find({})

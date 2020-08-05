@@ -31,6 +31,7 @@ const datePicker = (props) => {
 
   //Crates a state for the excluded times array
   const [stateExcludedTimes, setExcluded] = useState(excludedTimesArr);
+  const [stateExcludedDates, setExcludedDates] = useState(excludedDateArr);
 
   //When the date changes on the cal
   const handleDateChange = (date) => {
@@ -69,6 +70,15 @@ const datePicker = (props) => {
     });
   };
 
+  //On load grab the blockout dates and push them to the array after converting them
+  useEffect(() => {
+    props.blockouts.forEach((item) => {
+      excludedDateArr.push(convertBlockout(item.date));
+    });
+    
+    setExcludedDates(excludedDateArr)
+  }, []);
+
   //Every time the startdate loads/updates
   useEffect(() => {
     //Reset the excluded array
@@ -83,14 +93,6 @@ const datePicker = (props) => {
     filterData();
   }, [startDate]);
 
-  //On load grab the blockout dates and push them to the array after converting them
-  useEffect(() => {
-    props.blockouts.forEach((item) => {
-      excludedDateArr.push(convertBlockout(item.date));
-      console.log(excludedDateArr)
-    });
-  }, []);
-
   return (
     <DatePicker
       selected={startDate}
@@ -99,7 +101,7 @@ const datePicker = (props) => {
       filterDate={isWeekday}
       excludeTimes={stateExcludedTimes}
       minDate={new Date()}
-      excludeDates={excludedDateArr}
+      excludeDates={stateExcludedDates}
       maxDate={addDays(new Date(), 30)}
       minTime={setHours(setMinutes(new Date(), 0), 9)}
       maxTime={setHours(setMinutes(new Date(), 0), 17)}

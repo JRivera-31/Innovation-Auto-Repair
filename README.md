@@ -40,7 +40,6 @@ If you have any questions feel free to contact any of the Authors.
 
 ## Technologies
 <b>Built with</b>
-- [Axios](https://www.npmjs.com/package/axios)
 - [Bootstrap](https://getbootstrap.com/)
 - [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)

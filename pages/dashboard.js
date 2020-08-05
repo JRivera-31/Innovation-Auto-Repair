@@ -8,6 +8,7 @@ import { useCurrentUser } from "../lib/hooks"
 import dbConnect from "../util/dbConnect"
 import Appointment from "../models/appointment"
 import Blockout from "../models/blockout"
+import Loader from "../components/Loader"
 
 export default function Dashboard({ appointments, blockouts}) {
   const [user, {mutate}] = useCurrentUser()
@@ -40,7 +41,10 @@ export default function Dashboard({ appointments, blockouts}) {
           <BlockoutTable blockouts={blockouts} />
         </>
       ) : (
-        <div>Please login here: <Link href="/login"><a>Login</a></Link></div>
+          <div className={style.loader}>
+            <Loader />
+            <Link href="/login"><a className={style.link}>Login</a></Link>
+          </div>
       )}
     </div>
   );

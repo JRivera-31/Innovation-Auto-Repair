@@ -14,3 +14,12 @@
         width: 5%;
     }
 }
+
+.loader {
+    margin-top: 15%;
+    font-size: large;
+}
+
+.link {
+    text-decoration: underline;
+}

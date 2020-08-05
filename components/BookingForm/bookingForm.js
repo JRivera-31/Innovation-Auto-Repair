@@ -43,8 +43,9 @@ export default class BookingForm extends React.Component {
                 },
                 body: JSON.stringify(newAppointment)
             })
-            alert("Success!")
-            Router.push("/confirmation")
+            setTimeout(() => {
+                Router.push("/confirmation")
+            }, 5000)
         } catch (err) {
             console.log(err)
         }

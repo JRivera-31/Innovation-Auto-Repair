@@ -3,6 +3,7 @@ import style from "./dashboard.module.css";
 import DeleteIcon from "@material-ui/icons/Delete";
 import DashDatePicker from "../DashboardDatePicker/DashboardDatePicker";
 import { useState, useEffect } from "react";
+import Router from "next/router"
 
 const BlockoutTable = (props) => {
   const [blockoutData, setBlockoutData] = useState([]);
@@ -16,7 +17,7 @@ const BlockoutTable = (props) => {
       const res = await fetch(`/api/blockouts/${id}`, {
         method: "DELETE"
       })
-      window.location.reload()
+      Router.reload()
     } catch (err) {
       console.log(err)
     }
@@ -24,6 +25,7 @@ const BlockoutTable = (props) => {
 
   const handleBlockoutAdd = () => {
     setBlockoutData(props.blockouts);
+    Router.reload()
   };
 
   return (

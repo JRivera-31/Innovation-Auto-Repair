@@ -10,7 +10,7 @@ import Appointment from "../models/appointment"
 import Blockout from "../models/blockout"
 import Loader from "../components/Loader"
 
-export default function Dashboard({ appointments, blockouts}) {
+export default function Dashboard({ appointments, blockouts }) {
   const [user, {mutate}] = useCurrentUser()
   
   // useEffect(() => {
@@ -50,9 +50,7 @@ export default function Dashboard({ appointments, blockouts}) {
   );
 }
 
-export async function getServerSideProps({ req, res }) {
-  // await applySession(req, res)
-
+export async function getServerSideProps() {
   await dbConnect()
 
   const result = await Appointment.find({})

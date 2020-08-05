@@ -1,11 +1,17 @@
 import nextConnect from "next-connect"
+import { withSession } from "next-session"
 import bcrypt from "bcryptjs"
 import middleware from "../../middlewares/middleware"
+import sessionOptions from "../../middlewares/session-options"
 import { nanoid } from "nanoid"
 
 const handler = nextConnect()
 
 handler.use(middleware)
+
+handler.get((req, res) => {
+    res.json({ user: req.user })
+})
 
 handler.post(async (req, res) => {
     const { username, password } = req.body
@@ -22,6 +28,7 @@ handler.post(async (req, res) => {
         password: hashedPassword
     })
         .then(({ ops }) => ops[0])
+    
     req.Login(user, (err) => {
         if (err) throw err
         res.status(201).json({user: extractUser(req)})
